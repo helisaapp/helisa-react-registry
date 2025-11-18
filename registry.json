@@ -1,0 +1,205 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "helisa",
+  "homepage": "https://helisa.com",
+  "items": [
+    {
+      "name": "use-debounced",
+      "type": "registry:hook",
+      "title": "Use Debounced",
+      "description": "A hook that debounces a value.",
+      "files": [
+        {
+          "path": "registry/helisa/hooks/useDebounce.tsx",
+          "type": "registry:hook",
+          "target": "components/helisa/hooks/useDebounce.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-print",
+      "type": "registry:hook",
+      "title": "Use Print",
+      "description": "A hook that handles printing functionality.",
+      "files": [
+        {
+          "path": "registry/helisa/hooks/usePrint.ts",
+          "type": "registry:hook",
+          "target": "components/helisa/hooks/usePrint.ts"
+        }
+      ]
+    },
+    {
+      "name": "date-utils",
+      "type": "registry:lib",
+      "title": "Date Utils",
+      "description": "A library for date utility functions.",
+      "files": [
+        {
+          "path": "registry/helisa/lib/date-utils.ts",
+          "type": "registry:lib",
+          "target": "components/helisa/lib/date-utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "required-mark",
+      "type": "registry:ui",
+      "title": "Required Mark",
+      "description": "A simple asterisk to indicate required fields.",
+      "files": [
+        {
+          "path": "registry/helisa/ui/required-mark.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/required-mark.tsx"
+        }
+      ]
+    },
+    {
+      "name": "layout-container",
+      "type": "registry:ui",
+      "title": "Layout Container",
+      "description": "A container component for layout purposes.",
+      "files": [
+        {
+          "path": "registry/helisa/ui/layout-container.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/layout-container.tsx"
+        }
+      ]
+    },
+    {
+      "name": "custom-skeleton",
+      "type": "registry:ui",
+      "title": "Custom Skeleton",
+      "description": "A custom skeleton component for loading states.",
+      "registryDependencies": [
+        "skeleton"
+      ],
+      "files": [
+        {
+          "path": "registry/helisa/ui/custom-skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/custom-skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select-multi",
+      "type": "registry:ui",
+      "title": "Select Multi",
+      "description": "A multi-select component with badges.",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "popover",
+        "separator"
+      ],
+      "files": [
+        {
+          "path": "registry/helisa/ui/select-multi.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/select-multi.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-field",
+      "type": "registry:ui",
+      "title": "Form Field",
+      "description": "A form field wrapper component.",
+      "registryDependencies": [
+        "label",
+        "input",
+        "textarea",
+        "select",
+        "switch",
+        "checkbox",        
+        "field",
+        "http://localhost:3000/r/required-mark.json"
+      ],
+      "dependencies": ["react-hook-form"],
+      "files": [
+        {
+          "path": "registry/helisa/ui/form-field.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/form-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hello-world",
+      "type": "registry:component",
+      "title": "Hello World",
+      "description": "A simple hello world component",
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "example-form",
+      "type": "registry:component",
+      "title": "Example Form",
+      "description": "A contact form with Zod validation.",
+      "dependencies": ["zod"],
+      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/example-form/example-form.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "complex-component",
+      "type": "registry:component",
+      "title": "Complex Component",
+      "description": "A complex component showing hooks, libs and components.",
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/new-york/blocks/complex-component/page.tsx",
+          "type": "registry:page",
+          "target": "app/pokemon/page.tsx"
+        },
+        {
+          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "example-with-css",
+      "type": "registry:component",
+      "title": "Example with CSS",
+      "description": "A login form with a CSS file.",
+      "files": [
+        {
+          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/new-york/blocks/example-with-css/example-card.css",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}

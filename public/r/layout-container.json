@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "layout-container",
+  "type": "registry:ui",
+  "title": "Layout Container",
+  "description": "A container component for layout purposes.",
+  "files": [
+    {
+      "path": "registry/helisa/ui/layout-container.tsx",
+      "content": "import { cn } from '@/lib/utils';\n\nimport React from 'react';\n\ninterface LayoutContainerProps {\n  maxWidth?: 'sm' | 'md' | 'lg' | 'xl' | 'full' | '2xl' | '3xl' | '4xl' | '5xl' | 'container';\n  children: React.ReactNode;\n}\n\nexport const LayoutContainer = ({ children, maxWidth = 'full' }: LayoutContainerProps) => {\n  const maxWidthClasses: Record<string, string> = {\n    sm: 'max-w-sm',\n    md: 'max-w-md',\n    lg: 'max-w-lg',\n    xl: 'max-w-xl',\n    '2xl': 'max-w-2xl',\n    '3xl': 'max-w-3xl',\n    '4xl': 'max-w-4xl',\n    '5xl': 'max-w-5xl',\n    container: 'container',\n    full: 'max-w-full',\n  };\n\n  return <div className={cn(`mx-auto w-full`, maxWidthClasses[maxWidth])}>{children}</div>;\n};\n",
+      "type": "registry:ui",
+      "target": "components/helisa/ui/layout-container.tsx"
+    }
+  ]
+}

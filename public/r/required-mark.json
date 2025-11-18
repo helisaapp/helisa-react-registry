@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "required-mark",
+  "type": "registry:ui",
+  "title": "Required Mark",
+  "description": "A simple asterisk to indicate required fields.",
+  "files": [
+    {
+      "path": "registry/helisa/ui/required-mark.tsx",
+      "content": "import React from 'react';\n\nconst RequiredMark = () => {\n  return <span className=\"text-destructive\">*</span>;\n};\n\nexport default RequiredMark;\n",
+      "type": "registry:ui",
+      "target": "components/helisa/ui/required-mark.tsx"
+    }
+  ]
+}
