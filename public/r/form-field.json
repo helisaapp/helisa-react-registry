@@ -15,7 +15,7 @@
     "switch",
     "checkbox",
     "field",
-    "http://localhost:3000/r/required-mark.json"
+    "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json"
   ],
   "files": [
     {
