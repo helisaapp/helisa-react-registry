@@ -12,7 +12,7 @@
         {
           "path": "registry/helisa/hooks/useDebounce.tsx",
           "type": "registry:hook",
-          "target": "components/helisa/hooks/useDebounce.tsx"
+          "target": "hooks/useDebounce.tsx"
         }
       ]
     },
@@ -25,7 +25,7 @@
         {
           "path": "registry/helisa/hooks/usePrint.ts",
           "type": "registry:hook",
-          "target": "components/helisa/hooks/usePrint.ts"
+          "target": "hooks/usePrint.ts"
         }
       ]
     },
@@ -38,7 +38,7 @@
         {
           "path": "registry/helisa/lib/date-utils.ts",
           "type": "registry:lib",
-          "target": "components/helisa/lib/date-utils.ts"
+          "target": "lib/date-utils.ts"
         }
       ]
     },

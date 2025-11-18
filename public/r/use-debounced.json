@@ -9,7 +9,7 @@
       "path": "registry/helisa/hooks/useDebounce.tsx",
       "content": "import { useEffect, useState } from 'react';\n\n/**\n * A custom hook to debounce a value.\n *\n * @param value - The value to debounce.\n * @param delay - The debounce delay in milliseconds.\n * @returns The debounced value.\n */\nexport function useDebounce<T>(value: T, delay: number): T {\n  const [debouncedValue, setDebouncedValue] = useState(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n    }, delay);\n\n    // Cleanup the timeout if value or delay changes\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value, delay]);\n\n  return debouncedValue;\n}\n",
       "type": "registry:hook",
-      "target": "components/helisa/hooks/useDebounce.tsx"
+      "target": "hooks/useDebounce.tsx"
     }
   ]
 }
