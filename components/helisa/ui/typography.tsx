@@ -21,7 +21,7 @@ const typographyVariants = {
   small: "text-sm font-medium leading-none",
   xs: "text-xs text-muted-foreground leading-none",
   muted: "text-sm text-muted-foreground",
-  code: "bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+  code: "bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold w-fit",
 };
 
 // Mapeo de variantes a elementos HTML por defecto
@@ -41,9 +41,9 @@ const defaultElements = {
   lead: "p",
   large: "div",
   small: "small",
-  xs: "xs",
+  xs: "p",
   muted: "p",
-  code: "code",
+  code: "span",
 };
 
 export interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
