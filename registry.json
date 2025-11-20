@@ -56,6 +56,19 @@
       ]
     },
     {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "Typography components for consistent text styling.",
+      "files": [
+        {
+          "path": "registry/helisa/ui/typography.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/typography.tsx"
+        }
+      ]
+    },
+    {
       "name": "layout-container",
       "type": "registry:ui",
       "title": "Layout Container",
@@ -73,9 +86,7 @@
       "type": "registry:ui",
       "title": "Custom Skeleton",
       "description": "A custom skeleton component for loading states.",
-      "registryDependencies": [
-        "skeleton"
-      ],
+      "registryDependencies": ["skeleton"],
       "files": [
         {
           "path": "registry/helisa/ui/custom-skeleton.tsx",
@@ -115,7 +126,7 @@
         "textarea",
         "select",
         "switch",
-        "checkbox",        
+        "checkbox",
         "field",
         "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json"
       ],

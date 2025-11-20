@@ -1,30 +1,27 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
+  Blocks,
   Command,
-  Frame,
+  Component,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
-} from "lucide-react"
+  Home,
+  LibraryBig,
+  Webhook,
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavUser } from "@/components/nav-user"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import Logo from "./logo";
+import Link from "next/link";
 
 // This is sample data.
 const data = {
@@ -52,14 +49,14 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "UI",
       url: "#",
-      icon: SquareTerminal,
+      icon: Component,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Tipografía",
+          url: "/docs/ui/typography",
         },
         {
           title: "Starred",
@@ -72,9 +69,9 @@ const data = {
       ],
     },
     {
-      title: "Models",
+      title: "Lib",
       url: "#",
-      icon: Bot,
+      icon: LibraryBig,
       items: [
         {
           title: "Genesis",
@@ -91,9 +88,9 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "Hooks",
       url: "#",
-      icon: BookOpen,
+      icon: Webhook,
       items: [
         {
           title: "Introduction",
@@ -114,9 +111,9 @@ const data = {
       ],
     },
     {
-      title: "Settings",
+      title: "Blocks",
       url: "#",
-      icon: Settings2,
+      icon: Blocks,
       items: [
         {
           title: "General",
@@ -139,37 +136,30 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      name: "Introducción",
+      url: "/docs/introduction",
+      icon: Home,
     },
   ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        {/* <TeamSwitcher teams={data.teams} /> */}
+        <Link href="/">
+          <Logo />
+        </Link>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
+      {/* <SidebarFooter>
         <NavUser user={data.user} />
-      </SidebarFooter>
+      </SidebarFooter> */}
       <SidebarRail />
     </Sidebar>
-  )
+  );
 }

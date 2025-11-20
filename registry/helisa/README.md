@@ -11,4 +11,3 @@ ref: https://ui.shadcn.com/docs/registry/registry-item-json
 - ui: Use for UI components and single-file primitives.
 - styles: Use for global styles and theming.
 - page: Use for page or file-based routes.
-

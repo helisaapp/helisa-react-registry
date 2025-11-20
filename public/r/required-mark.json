@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/helisa/ui/required-mark.tsx",
-      "content": "import React from 'react';\n\nconst RequiredMark = () => {\n  return <span className=\"text-destructive\">*</span>;\n};\n\nexport default RequiredMark;\n",
+      "content": "\"use client\";\n\nimport React from \"react\";\n\nconst RequiredMark = () => {\n  return <span className=\"text-destructive\">*</span>;\n};\n\nexport default RequiredMark;\n",
       "type": "registry:ui",
       "target": "components/helisa/ui/required-mark.tsx"
     }

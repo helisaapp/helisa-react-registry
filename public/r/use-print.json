@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "registry/helisa/hooks/usePrint.ts",
-      "content": "export const usePrint = () => {\n  const printBlob = (blob: Blob, fileName: string) => {\n    const url = window.URL.createObjectURL(blob);\n    const a = document.createElement('a');\n    a.href = url;\n    a.download = fileName;\n    a.click();\n  };\n\n  return { printBlob };\n};\n",
+      "content": "export const usePrint = () => {\n  const printBlob = (blob: Blob, fileName: string) => {\n    const url = window.URL.createObjectURL(blob);\n    const a = document.createElement(\"a\");\n    a.href = url;\n    a.download = fileName;\n    a.click();\n  };\n\n  return { printBlob };\n};\n",
       "type": "registry:hook",
       "target": "hooks/usePrint.ts"
     }
