@@ -80,8 +80,10 @@ const TypographyPage = () => {
   return (
     <div className="max-w-6xl mx-auto p-8 space-y-8">
       <div className="flex flex-col space-y-2 max-w-2xl">
-      <Typography variant="large">Instalación</Typography>
-      <Typography variant="code">npx shadcn@latest add @helisa/typography</Typography>
+        <Typography variant="large">Instalación</Typography>
+        <Typography variant="code">
+          npx shadcn@latest add @helisa/typography
+        </Typography>
       </div>
 
       <Tabs defaultValue="preview">
