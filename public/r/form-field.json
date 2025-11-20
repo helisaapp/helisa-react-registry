@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Form Field",
   "description": "A form field wrapper component.",
-  "dependencies": [
-    "react-hook-form"
-  ],
+  "dependencies": ["react-hook-form"],
   "registryDependencies": [
     "label",
     "input",

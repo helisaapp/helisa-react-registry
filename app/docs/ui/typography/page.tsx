@@ -139,7 +139,9 @@ const TypographyPage = () => {
             </div>
 
             <div className="border-t pt-8 space-y-4">
-              <Typography variant="h4">Ejemplo con prop "as"</Typography>
+              <Typography variant="h4">
+                Ejemplo con prop &quot;as&quot;
+              </Typography>
               <Typography variant="h3" as="p">
                 Este texto tiene estilos de h3 pero es un elemento p
               </Typography>
