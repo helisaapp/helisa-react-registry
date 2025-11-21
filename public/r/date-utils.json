@@ -4,9 +4,7 @@
   "type": "registry:lib",
   "title": "Date Utilities",
   "description": "A set of utility functions for date manipulation and formatting.",
-  "dependencies": [
-    "date-fns"
-  ],
+  "dependencies": ["date-fns"],
   "files": [
     {
       "path": "registry/helisa/lib/date-utils.ts",

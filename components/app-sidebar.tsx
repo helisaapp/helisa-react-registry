@@ -59,8 +59,8 @@ const data = {
           url: "/docs/ui/typography",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Cargador de Archivos",
+          url: "/docs/ui/file-uploader",
         },
         {
           title: "Settings",

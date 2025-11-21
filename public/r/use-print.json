@@ -6,10 +6,10 @@
   "description": "A hook that handles printing functionality.",
   "files": [
     {
-      "path": "registry/helisa/hooks/usePrint.tsx",
+      "path": "registry/helisa/hooks/use-print.tsx",
       "content": "export const usePrint = () => {\n  const printBlob = (blob: Blob, fileName: string) => {\n    const url = window.URL.createObjectURL(blob);\n    const a = document.createElement(\"a\");\n    a.href = url;\n    a.download = fileName;\n    a.click();\n  };\n\n  return { printBlob };\n};\n",
       "type": "registry:hook",
-      "target": "hooks/usePrint.tsx"
+      "target": "hooks/use-print.tsx"
     }
   ]
 }

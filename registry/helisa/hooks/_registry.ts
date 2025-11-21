@@ -8,9 +8,9 @@ export const hooks: Registry["items"] = [
     description: "A hook that handles printing functionality.",
     files: [
       {
-        path: "hooks/usePrint.tsx",
+        path: "hooks/use-print.tsx",
         type: "registry:hook",
-        target: "hooks/usePrint.tsx",
+        target: "hooks/use-print.tsx",
       },
     ],
   },
@@ -21,10 +21,23 @@ export const hooks: Registry["items"] = [
     description: "A hook that debounces a value over a specified delay.",
     files: [
       {
-        path: "hooks/useDebounce.tsx",
+        path: "hooks/use-debounce.tsx",
         type: "registry:hook",
-        target: "hooks/useDebounce.tsx",
+        target: "hooks/use-debounce.tsx",
       },
     ],
-  }
+  },
+  {
+    name: "use-file-upload",
+    type: "registry:hook",
+    title: "useFileUpload Hook",
+    description: "A hook that handles file upload functionality.",
+    files: [
+      {
+        path: "hooks/use-file-upload.tsx",
+        type: "registry:hook",
+        target: "hooks/use-file-upload.tsx",
+      },
+    ],
+  },
 ];

@@ -45,9 +45,7 @@
       "type": "registry:ui",
       "title": "Custom Skeleton",
       "description": "A customizable skeleton loader component.",
-      "registryDependencies": [
-        "skeleton"
-      ],
+      "registryDependencies": ["skeleton"],
       "files": [
         {
           "path": "registry/helisa/ui/custom-skeleton.tsx",
@@ -91,9 +89,7 @@
         "field",
         "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json"
       ],
-      "dependencies": [
-        "react-hook-form"
-      ],
+      "dependencies": ["react-hook-form"],
       "files": [
         {
           "path": "registry/helisa/ui/form-field.tsx",
@@ -107,9 +103,7 @@
       "type": "registry:lib",
       "title": "Date Utilities",
       "description": "A set of utility functions for date manipulation and formatting.",
-      "dependencies": [
-        "date-fns"
-      ],
+      "dependencies": ["date-fns"],
       "files": [
         {
           "path": "registry/helisa/lib/date-utils.ts",
@@ -125,9 +119,9 @@
       "description": "A hook that handles printing functionality.",
       "files": [
         {
-          "path": "registry/helisa/hooks/usePrint.tsx",
+          "path": "registry/helisa/hooks/use-print.tsx",
           "type": "registry:hook",
-          "target": "hooks/usePrint.tsx"
+          "target": "hooks/use-print.tsx"
         }
       ]
     },
@@ -138,9 +132,39 @@
       "description": "A hook that debounces a value over a specified delay.",
       "files": [
         {
-          "path": "registry/helisa/hooks/useDebounce.tsx",
+          "path": "registry/helisa/hooks/use-debounce.tsx",
           "type": "registry:hook",
-          "target": "hooks/useDebounce.tsx"
+          "target": "hooks/use-debounce.tsx"
+        }
+      ]
+    },
+    {
+      "name": "use-file-upload",
+      "type": "registry:hook",
+      "title": "useFileUpload Hook",
+      "description": "A hook that handles file upload functionality.",
+      "files": [
+        {
+          "path": "registry/helisa/hooks/use-file-upload.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-file-upload.tsx"
+        }
+      ]
+    },
+    {
+      "name": "single-image-uploader",
+      "type": "registry:component",
+      "title": "Single Image Uploader",
+      "description": "A component for uploading a single image file with preview and validation.",
+      "registryDependencies": [
+        "button",
+        "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/use-file-upload.json"
+      ],
+      "files": [
+        {
+          "path": "registry/helisa/components/upload-files/single-image-uploader.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/components/upload-files/single-image-uploader.tsx"
         }
       ]
     }

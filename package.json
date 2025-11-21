@@ -9,7 +9,7 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "build-registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts",
-    "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && shadcn build",
+    "registry:build": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && shadcn build && prettier --write .",
     "prettier:format": "prettier --write .",
     "prettier:check": "prettier --check ."
   },

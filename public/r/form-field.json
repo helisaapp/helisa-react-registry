@@ -4,9 +4,7 @@
   "type": "registry:ui",
   "title": "Form Field",
   "description": "A component for form field layout and validation.",
-  "dependencies": [
-    "react-hook-form"
-  ],
+  "dependencies": ["react-hook-form"],
   "registryDependencies": [
     "label",
     "input",

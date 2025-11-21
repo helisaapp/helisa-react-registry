@@ -59,17 +59,19 @@ export const ui: Registry["items"] = [
     type: "registry:ui",
     title: "Select Multi",
     description: "A multi-select with badges",
-    registryDependencies: ["badge",
-        "button",
-        "command",
-        "popover",
-        "separator"],
+    registryDependencies: [
+      "badge",
+      "button",
+      "command",
+      "popover",
+      "separator",
+    ],
     files: [
       {
         path: "ui/select-multi.tsx",
         type: "registry:ui",
         target: "components/helisa/ui/select-multi.tsx",
-      }
+      },
     ],
   },
   {
@@ -78,14 +80,14 @@ export const ui: Registry["items"] = [
     title: "Form Field",
     description: "A component for form field layout and validation.",
     registryDependencies: [
-       "label",
-        "input",
-        "textarea",
-        "select",
-        "switch",
-        "checkbox",
-        "field",
-        "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json"
+      "label",
+      "input",
+      "textarea",
+      "select",
+      "switch",
+      "checkbox",
+      "field",
+      "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json",
     ],
     dependencies: ["react-hook-form"],
     files: [
@@ -93,7 +95,7 @@ export const ui: Registry["items"] = [
         path: "ui/form-field.tsx",
         type: "registry:ui",
         target: "components/helisa/ui/form-field.tsx",
-      }
+      },
     ],
-  }
+  },
 ];
