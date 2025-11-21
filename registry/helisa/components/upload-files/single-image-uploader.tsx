@@ -2,7 +2,7 @@
 
 import { AlertCircleIcon, ImageIcon, UploadIcon, XIcon } from "lucide-react";
 
-import { FileMetadata, useFileUpload } from "@/hooks/user-file-upload";
+import { FileMetadata, useFileUpload } from "@/hooks/use-file-upload";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 
