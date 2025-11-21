@@ -3,7 +3,7 @@
   "name": "select-multi",
   "type": "registry:ui",
   "title": "Select Multi",
-  "description": "A multi-select component with badges.",
+  "description": "A multi-select with badges",
   "registryDependencies": [
     "badge",
     "button",

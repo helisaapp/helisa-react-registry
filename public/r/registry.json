@@ -1,44 +1,16 @@
 {
-  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "helisa",
-  "homepage": "https://helisa.com",
+  "homepage": "https://ui.shadcn.com",
   "items": [
     {
-      "name": "use-debounced",
-      "type": "registry:hook",
-      "title": "Use Debounced",
-      "description": "A hook that debounces a value.",
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "A set of typographic components for consistent text styling.",
       "files": [
         {
-          "path": "registry/helisa/hooks/useDebounce.tsx",
-          "type": "registry:hook",
-          "target": "hooks/useDebounce.tsx"
-        }
-      ]
-    },
-    {
-      "name": "use-print",
-      "type": "registry:hook",
-      "title": "Use Print",
-      "description": "A hook that handles printing functionality.",
-      "files": [
-        {
-          "path": "registry/helisa/hooks/usePrint.ts",
-          "type": "registry:hook",
-          "target": "hooks/usePrint.ts"
-        }
-      ]
-    },
-    {
-      "name": "date-utils",
-      "type": "registry:lib",
-      "title": "Date Utils",
-      "description": "A library for date utility functions.",
-      "files": [
-        {
-          "path": "registry/helisa/lib/date-utils.ts",
-          "type": "registry:lib",
-          "target": "lib/date-utils.ts"
+          "path": "registry/helisa/ui/typography.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/typography.tsx"
         }
       ]
     },
@@ -56,23 +28,10 @@
       ]
     },
     {
-      "name": "typography",
-      "type": "registry:ui",
-      "title": "Typography",
-      "description": "Typography components for consistent text styling.",
-      "files": [
-        {
-          "path": "registry/helisa/ui/typography.tsx",
-          "type": "registry:ui",
-          "target": "components/helisa/ui/typography.tsx"
-        }
-      ]
-    },
-    {
       "name": "layout-container",
       "type": "registry:ui",
       "title": "Layout Container",
-      "description": "A container component for layout purposes.",
+      "description": "A flexible container component for layout purposes.",
       "files": [
         {
           "path": "registry/helisa/ui/layout-container.tsx",
@@ -85,8 +44,10 @@
       "name": "custom-skeleton",
       "type": "registry:ui",
       "title": "Custom Skeleton",
-      "description": "A custom skeleton component for loading states.",
-      "registryDependencies": ["skeleton"],
+      "description": "A customizable skeleton loader component.",
+      "registryDependencies": [
+        "skeleton"
+      ],
       "files": [
         {
           "path": "registry/helisa/ui/custom-skeleton.tsx",
@@ -99,7 +60,7 @@
       "name": "select-multi",
       "type": "registry:ui",
       "title": "Select Multi",
-      "description": "A multi-select component with badges.",
+      "description": "A multi-select with badges",
       "registryDependencies": [
         "badge",
         "button",
@@ -119,7 +80,7 @@
       "name": "form-field",
       "type": "registry:ui",
       "title": "Form Field",
-      "description": "A form field wrapper component.",
+      "description": "A component for form field layout and validation.",
       "registryDependencies": [
         "label",
         "input",
@@ -130,7 +91,9 @@
         "field",
         "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/required-mark.json"
       ],
-      "dependencies": ["react-hook-form"],
+      "dependencies": [
+        "react-hook-form"
+      ],
       "files": [
         {
           "path": "registry/helisa/ui/form-field.tsx",
@@ -140,77 +103,47 @@
       ]
     },
     {
-      "name": "hello-world",
-      "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
-      "registryDependencies": ["button"],
+      "name": "date-utils",
+      "type": "registry:lib",
+      "title": "Date Utilities",
+      "description": "A set of utility functions for date manipulation and formatting.",
+      "dependencies": [
+        "date-fns"
+      ],
       "files": [
         {
-          "path": "registry/new-york/blocks/hello-world/hello-world.tsx",
-          "type": "registry:component"
+          "path": "registry/helisa/lib/date-utils.ts",
+          "type": "registry:lib",
+          "target": "lib/date-utils.ts"
         }
       ]
     },
     {
-      "name": "example-form",
-      "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "name": "use-print",
+      "type": "registry:hook",
+      "title": "usePrint Hook",
+      "description": "A hook that handles printing functionality.",
       "files": [
         {
-          "path": "registry/new-york/blocks/example-form/example-form.tsx",
-          "type": "registry:component"
+          "path": "registry/helisa/hooks/usePrint.tsx",
+          "type": "registry:hook",
+          "target": "hooks/usePrint.tsx"
         }
       ]
     },
     {
-      "name": "complex-component",
-      "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "name": "use-debounce",
+      "type": "registry:hook",
+      "title": "useDebounce Hook",
+      "description": "A hook that debounces a value over a specified delay.",
       "files": [
         {
-          "path": "registry/new-york/blocks/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/lib/pokemon.ts",
-          "type": "registry:lib"
-        },
-        {
-          "path": "registry/new-york/blocks/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
-        }
-      ]
-    },
-    {
-      "name": "example-with-css",
-      "type": "registry:component",
-      "title": "Example with CSS",
-      "description": "A login form with a CSS file.",
-      "files": [
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/new-york/blocks/example-with-css/example-card.css",
-          "type": "registry:component"
+          "path": "registry/helisa/hooks/useDebounce.tsx",
+          "type": "registry:hook",
+          "target": "hooks/useDebounce.tsx"
         }
       ]
     }
-  ]
+  ],
+  "name": "shadcn/ui"
 }

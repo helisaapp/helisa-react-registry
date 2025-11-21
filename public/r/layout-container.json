@@ -3,7 +3,7 @@
   "name": "layout-container",
   "type": "registry:ui",
   "title": "Layout Container",
-  "description": "A container component for layout purposes.",
+  "description": "A flexible container component for layout purposes.",
   "files": [
     {
       "path": "registry/helisa/ui/layout-container.tsx",

@@ -2,8 +2,11 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "date-utils",
   "type": "registry:lib",
-  "title": "Date Utils",
-  "description": "A library for date utility functions.",
+  "title": "Date Utilities",
+  "description": "A set of utility functions for date manipulation and formatting.",
+  "dependencies": [
+    "date-fns"
+  ],
   "files": [
     {
       "path": "registry/helisa/lib/date-utils.ts",

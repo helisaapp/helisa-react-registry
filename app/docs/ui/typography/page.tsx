@@ -79,6 +79,15 @@ const TypographyPage = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-8 space-y-8">
+      <div className="flex flex-col space-y-8">
+        <Typography variant="h1">Typography</Typography>
+        <Typography variant="lead">
+          El componente Typography proporciona una variedad de estilos de texto
+          predefinidos para garantizar la coherencia tipográfica en toda la
+          aplicación.
+        </Typography>
+      </div>
+
       <div className="flex flex-col space-y-2 max-w-2xl">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">

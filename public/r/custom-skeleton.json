@@ -3,8 +3,10 @@
   "name": "custom-skeleton",
   "type": "registry:ui",
   "title": "Custom Skeleton",
-  "description": "A custom skeleton component for loading states.",
-  "registryDependencies": ["skeleton"],
+  "description": "A customizable skeleton loader component.",
+  "registryDependencies": [
+    "skeleton"
+  ],
   "files": [
     {
       "path": "registry/helisa/ui/custom-skeleton.tsx",
