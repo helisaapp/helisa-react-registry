@@ -88,11 +88,11 @@ export const useFileUpload = (
     (file: File | FileMetadata): string | null => {
       if (file instanceof File) {
         if (file.size > maxSize) {
-          return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`;
+          return `El archivo "${file.name}" excede el tamaño máximo de ${formatBytes(maxSize)}.`;
         }
       } else {
         if (file.size > maxSize) {
-          return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`;
+          return `El archivo "${file.name}" excede el tamaño máximo de ${formatBytes(maxSize)}.`;
         }
       }
 
@@ -188,7 +188,7 @@ export const useFileUpload = (
         maxFiles !== Number.POSITIVE_INFINITY &&
         state.files.length + newFilesArray.length > maxFiles
       ) {
-        errors.push(`You can only upload a maximum of ${maxFiles} files.`);
+        errors.push(`Solo puedes subir un máximo de ${maxFiles} archivos.`);
         setState((prev) => ({ ...prev, errors }));
         return;
       }
@@ -211,8 +211,8 @@ export const useFileUpload = (
         if (file.size > maxSize) {
           errors.push(
             multiple
-              ? `Some files exceed the maximum size of ${formatBytes(maxSize)}.`
-              : `File exceeds the maximum size of ${formatBytes(maxSize)}.`,
+              ? `Algunos archivos exceden el tamaño máximo de ${formatBytes(maxSize)}.`
+              : `El archivo excede el tamaño máximo de ${formatBytes(maxSize)}.`,
           );
           continue;
         }
