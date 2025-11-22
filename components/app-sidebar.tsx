@@ -66,6 +66,10 @@ const data = {
           title: "Selector de empresa",
           url: "/docs/ui/company-switcher",
         },
+        {
+          title: "Selector de fecha",
+          url: "/docs/ui/select-date-picker",
+        },
       ],
     },
     {
