@@ -59,12 +59,12 @@ const data = {
           url: "/docs/ui/typography",
         },
         {
-          title: "Cargador de Archivos",
+          title: "Carga de archivos",
           url: "/docs/ui/file-uploader",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Selector de empresa",
+          url: "/docs/ui/company-switcher",
         },
       ],
     },
@@ -72,66 +72,19 @@ const data = {
       title: "Lib",
       url: "#",
       icon: LibraryBig,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
+      items: [],
     },
     {
       title: "Hooks",
       url: "#",
       icon: Webhook,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
+      items: [],
     },
     {
       title: "Blocks",
       url: "#",
       icon: Blocks,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      items: [],
     },
   ],
   projects: [

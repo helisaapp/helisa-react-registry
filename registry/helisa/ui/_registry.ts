@@ -98,4 +98,18 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "company-switcher",
+    type: "registry:ui",
+    title: "Company Switcher",
+    description: "A company switcher component for sidebar navigation.",
+    registryDependencies: ["dropdown-menu", "sidebar"],
+    files: [
+      {
+        path: "ui/company-switcher.tsx",
+        type: "registry:ui",
+        target: "components/helisa/ui/company-switcher.tsx",
+      },
+    ],
+  },
 ];

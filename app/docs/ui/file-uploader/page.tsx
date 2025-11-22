@@ -27,17 +27,28 @@ const FileUploaderPage = () => {
     onUploaded={handleUpload} />
   `;
 
+  const codeExample = () => {
+    return (
+      <SingleImageUploader
+        acceptedFormats="image/svg+xml,image/png,image/jpeg,image/jpg,image/gif"
+        fileTypes={["svg", "png", "jpeg", "jpg", "gif"]}
+        maxSizeMB={2}
+        onUploaded={handleUpload}
+      />
+    );
+  };
+
   return (
-    <LayoutContainer maxWidth="container">
+    <LayoutContainer maxWidth="5xl">
       <div className="flex flex-col space-y-8">
         <Typography variant="h1">File Uploader</Typography>
         <Typography variant="lead">
-          Componente para subir imágenes con vista previa y validación de
-          formato y tamaño.
+          Componentes para subir imágenes o archivos de manera sencilla y
+          eficiente.
         </Typography>
       </div>
 
-      <div className="flex flex-col space-y-2 max-w-2xl">
+      <div className="flex flex-col space-y-2 max-w-2xl my-5">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">
           npx shadcn@latest add @helisa/single-image-uploader
@@ -51,12 +62,7 @@ const FileUploaderPage = () => {
         </TabsList>
         <TabsContent value="preview">
           {/* Preview */}
-          <SingleImageUploader
-            acceptedFormats="image/svg+xml,image/png,image/jpeg,image/jpg,image/gif"
-            fileTypes={["svg", "png", "jpeg", "jpg", "gif"]}
-            maxSizeMB={2}
-            onUploaded={handleUpload}
-          />
+          {codeExample()}
         </TabsContent>
         <TabsContent value="code">
           {/* Code */}

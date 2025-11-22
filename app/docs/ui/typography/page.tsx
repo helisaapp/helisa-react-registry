@@ -1,3 +1,4 @@
+import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
@@ -78,7 +79,7 @@ const TypographyPage = () => {
           </div>`;
 
   return (
-    <div className="max-w-6xl mx-auto p-8 space-y-8">
+    <LayoutContainer maxWidth="5xl">
       <div className="flex flex-col space-y-8">
         <Typography variant="h1">Typography</Typography>
         <Typography variant="lead">
@@ -88,7 +89,7 @@ const TypographyPage = () => {
         </Typography>
       </div>
 
-      <div className="flex flex-col space-y-2 max-w-2xl">
+      <div className="flex flex-col space-y-2 max-w-2xl my-5">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">
           npx shadcn@latest add @helisa/typography
@@ -179,7 +180,7 @@ const TypographyPage = () => {
           </SyntaxHighlighter>
         </TabsContent>
       </Tabs>
-    </div>
+    </LayoutContainer>
   );
 };
 
