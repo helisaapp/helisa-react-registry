@@ -15,20 +15,18 @@ import { es } from "react-day-picker/locale";
 import { Separator } from "@/components/ui/separator";
 import { format } from "date-fns";
 
-export const SelectDatePicker = (
+export const InputDatePicker = (
   calendarProps: DayPickerProps & {
     buttonVariant?: React.ComponentProps<typeof Button>["variant"];
   } & { label?: string; clearEnable?: boolean; onClear?: () => void },
 ) => {
   const [open, setOpen] = React.useState(false);
-
   const handleClear = () => {
     if (calendarProps.onClear) {
       calendarProps.onClear();
     }
     setOpen(false);
   };
-
   return (
     <div className="flex flex-col gap-3">
       {calendarProps.label && (
@@ -110,4 +108,4 @@ export const SelectDatePicker = (
   );
 };
 
-export default SelectDatePicker;
+export default InputDatePicker;

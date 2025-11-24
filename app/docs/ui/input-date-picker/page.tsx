@@ -1,6 +1,6 @@
 "use client";
 
-import { SelectDatePicker } from "@/components/helisa/ui/select-date-picker";
+import { InputDatePicker } from "@/components/helisa/ui/input-date-picker";
 import React, { useState } from "react";
 import { DateRange } from "react-day-picker";
 import { Typography } from "../../../../components/helisa/ui/typography";
@@ -17,7 +17,7 @@ const SinglePicker = () => {
   const codeString = `
    const [date, setDate] = useState<Date | undefined>(undefined);
 
-   <SelectDatePicker
+   <InputDatePicker
         selected={date}
         onSelect={setDate}
         mode="single"
@@ -31,7 +31,7 @@ const SinglePicker = () => {
   const codeExample = () => {
     return (
       <div className="flex flex-col gap-5 max-w-sm ">
-        <SelectDatePicker
+        <InputDatePicker
           selected={date}
           onSelect={setDate}
           mode="single"
@@ -79,7 +79,7 @@ const RangePicker = () => {
     to: new Date(2025, 6, 7),
   });
 
-   <SelectDatePicker
+   <InputDatePicker
       mode="range"
       defaultMonth={dateRange?.from}
       selected={dateRange}
@@ -97,7 +97,7 @@ const RangePicker = () => {
   const codeExample = () => {
     return (
       <div className="flex flex-col gap-5 max-w-sm ">
-        <SelectDatePicker
+        <InputDatePicker
           mode="range"
           defaultMonth={dateRange?.from}
           selected={dateRange}
@@ -155,7 +155,7 @@ const MultiPicker = () => {
     new Date(2025, 6, 24),
   ]);
 
-    <SelectDatePicker
+    <InputDatePicker
         mode="multiple"
         numberOfMonths={2}
         defaultMonth={dates[0]}
@@ -173,7 +173,7 @@ const MultiPicker = () => {
   const codeExample = () => {
     return (
       <div className="flex flex-col gap-5 max-w-sm ">
-        <SelectDatePicker
+        <InputDatePicker
           mode="multiple"
           numberOfMonths={2}
           defaultMonth={dates[0]}
@@ -217,11 +217,11 @@ const MultiPicker = () => {
   );
 };
 
-const SelectDatePickerPage = () => {
+const InputDatePickerPage = () => {
   return (
     <LayoutContainer maxWidth="5xl">
       <div className="flex flex-col space-y-8 gap-1">
-        <Typography variant="h1">Select Date Picker</Typography>
+        <Typography variant="h1">Input Date Picker</Typography>
         <Typography variant="lead">
           Componente para seleccionar fechas individuales, múltiples o rangos de
           fechas mediante un calendario desplegable.
@@ -243,7 +243,7 @@ const SelectDatePickerPage = () => {
       <div className="flex flex-col space-y-2 max-w-2xl my-5">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">
-          npx shadcn@latest add @helisa/select-date-picker
+          npx shadcn@latest add @helisa/input-date-picker
         </Typography>
       </div>
 
@@ -251,7 +251,7 @@ const SelectDatePickerPage = () => {
         <div className="flex flex-col space-y-1 my-5">
           <Typography variant="h2">Single Date Picker</Typography>
           <Typography variant="body2">
-            Selector de fecha para seleccionar una sola fecha.
+            Input de fecha para seleccionar una sola fecha.
           </Typography>
           {SinglePicker()}
         </div>
@@ -261,7 +261,7 @@ const SelectDatePickerPage = () => {
         <div className="flex flex-col space-y-1 my-5">
           <Typography variant="h2">Range Date Picker</Typography>
           <Typography variant="body2">
-            Selector de fecha para seleccionar un rango de fechas.
+            Input de fecha para seleccionar un rango de fechas.
           </Typography>
           {RangePicker()}
         </div>
@@ -271,7 +271,7 @@ const SelectDatePickerPage = () => {
         <div className="flex flex-col space-y-1 mt-5 mb-28">
           <Typography variant="h2">Multiple Date Picker</Typography>
           <Typography variant="body2">
-            Selector de fecha para seleccionar múltiples fechas.
+            Input de fecha para seleccionar múltiples fechas.
           </Typography>
           {MultiPicker()}
         </div>
@@ -280,4 +280,4 @@ const SelectDatePickerPage = () => {
   );
 };
 
-export default SelectDatePickerPage;
+export default InputDatePickerPage;

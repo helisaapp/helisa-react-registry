@@ -15,7 +15,7 @@ import { es } from "react-day-picker/locale";
 import { Separator } from "@/components/ui/separator";
 import { format } from "date-fns";
 
-export const SelectDatePicker = (
+export const InputDatePicker = (
   calendarProps: DayPickerProps & {
     buttonVariant?: React.ComponentProps<typeof Button>["variant"];
   } & { label?: string; clearEnable?: boolean; onClear?: () => void },
@@ -108,4 +108,4 @@ export const SelectDatePicker = (
   );
 };
 
-export default SelectDatePicker;
+export default InputDatePicker;

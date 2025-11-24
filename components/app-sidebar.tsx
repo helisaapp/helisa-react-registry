@@ -68,7 +68,7 @@ const data = {
         },
         {
           title: "Selector de fecha",
-          url: "/docs/ui/select-date-picker",
+          url: "/docs/ui/input-date-picker",
         },
       ],
     },

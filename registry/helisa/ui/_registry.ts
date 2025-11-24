@@ -113,9 +113,9 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "select-date-picker",
+    name: "input-date-picker",
     type: "registry:ui",
-    title: "Select Date Picker",
+    title: "Input Date Picker",
     description: "A date picker component with a dropdown selection interface.",
     registryDependencies: [
       "button",
@@ -127,9 +127,9 @@ export const ui: Registry["items"] = [
     dependencies: ["react-day-picker", "date-fns"],
     files: [
       {
-        path: "ui/select-date-picker.tsx",
+        path: "ui/input-date-picker.tsx",
         type: "registry:ui",
-        target: "components/helisa/ui/select-date-picker.tsx",
+        target: "components/helisa/ui/input-date-picker.tsx",
       },
     ],
   },
