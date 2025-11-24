@@ -134,6 +134,20 @@
       ]
     },
     {
+      "name": "nav-tabs",
+      "type": "registry:ui",
+      "title": "Nav Tabs",
+      "description": "A navigation tab component for tab-based navigation interfaces.",
+      "registryDependencies": ["badge", "scroll-area", "tabs"],
+      "files": [
+        {
+          "path": "registry/helisa/ui/nav-tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/helisa/ui/nav-tabs.tsx"
+        }
+      ]
+    },
+    {
       "name": "date-utils",
       "type": "registry:lib",
       "title": "Date Utilities",

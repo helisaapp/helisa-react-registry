@@ -133,4 +133,19 @@ export const ui: Registry["items"] = [
       },
     ],
   },
+  {
+    name: "nav-tabs",
+    type: "registry:ui",
+    title: "Nav Tabs",
+    description:
+      "A navigation tab component for tab-based navigation interfaces.",
+    registryDependencies: ["badge", "scroll-area", "tabs"],
+    files: [
+      {
+        path: "ui/nav-tabs.tsx",
+        type: "registry:ui",
+        target: "components/helisa/ui/nav-tabs.tsx",
+      },
+    ],
+  },
 ];

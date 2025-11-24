@@ -6,9 +6,8 @@ import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Book, Home } from "lucide-react";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useState } from "react";
+import CodeContainer from "@/components/code-container";
 
 const CompanySwitcherPage = () => {
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null);
@@ -101,9 +100,7 @@ const CompanySwitcherPage = () => {
         </TabsContent>
         <TabsContent value="code">
           {/* Code */}
-          <SyntaxHighlighter style={github} language="typescript">
-            {codeString}
-          </SyntaxHighlighter>
+          <CodeContainer>{codeString}</CodeContainer>
         </TabsContent>
       </Tabs>
     </LayoutContainer>

@@ -1,9 +1,8 @@
+import CodeContainer from "@/components/code-container";
 import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const TypographyPage = () => {
   const codeString = `
@@ -175,9 +174,7 @@ const TypographyPage = () => {
         </TabsContent>
         <TabsContent value="code">
           {/* Code */}
-          <SyntaxHighlighter style={github} language="typescript">
-            {codeString}
-          </SyntaxHighlighter>
+          <CodeContainer>{codeString}</CodeContainer>
         </TabsContent>
       </Tabs>
     </LayoutContainer>

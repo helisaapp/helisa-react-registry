@@ -6,10 +6,9 @@ import { DateRange } from "react-day-picker";
 import { Typography } from "../../../../components/helisa/ui/typography";
 import { format } from "date-fns";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Separator } from "@/components/ui/separator";
+import CodeContainer from "@/components/code-container";
 
 const SinglePicker = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -59,9 +58,7 @@ const SinglePicker = () => {
       </TabsContent>
       <TabsContent value="code">
         {/* Code */}
-        <SyntaxHighlighter style={github} language="typescript">
-          {codeString}
-        </SyntaxHighlighter>
+        <CodeContainer>{codeString}</CodeContainer>
       </TabsContent>
     </Tabs>
   );
@@ -135,9 +132,7 @@ const RangePicker = () => {
       </TabsContent>
       <TabsContent value="code">
         {/* Code */}
-        <SyntaxHighlighter style={github} language="typescript">
-          {codeString}
-        </SyntaxHighlighter>
+        <CodeContainer>{codeString}</CodeContainer>
       </TabsContent>
     </Tabs>
   );
@@ -209,9 +204,7 @@ const MultiPicker = () => {
       </TabsContent>
       <TabsContent value="code">
         {/* Code */}
-        <SyntaxHighlighter style={github} language="typescript">
-          {codeString}
-        </SyntaxHighlighter>
+        <CodeContainer>{codeString}</CodeContainer>
       </TabsContent>
     </Tabs>
   );

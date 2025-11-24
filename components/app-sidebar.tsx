@@ -55,27 +55,43 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "Tipografía",
-          url: "/docs/ui/typography",
-        },
-        {
-          title: "Carga de archivos",
-          url: "/docs/ui/file-uploader",
-        },
-        {
-          title: "Selector de empresa",
+          title: "Company Switcher",
           url: "/docs/ui/company-switcher",
         },
         {
-          title: "Selector de fecha",
+          title: "File Uploader",
+          url: "/docs/ui/file-uploader",
+        },
+        {
+          title: "Input Date Picker",
           url: "/docs/ui/input-date-picker",
+        },
+        {
+          title: "Layout Container",
+          url: "/docs/ui/layout-container",
+        },
+        {
+          title: "Nav Tabs",
+          url: "/docs/ui/nav-tabs",
+        },
+        {
+          title: "Select Multi",
+          url: "/docs/ui/select-multi",
+        },
+        {
+          title: "Skeleton",
+          url: "/docs/ui/custom-skeleton",
+        },
+        {
+          title: "Typography",
+          url: "/docs/ui/typography",
         },
       ],
     },
     {
-      title: "Lib",
+      title: "Blocks",
       url: "#",
-      icon: LibraryBig,
+      icon: Blocks,
       items: [],
     },
     {
@@ -85,9 +101,9 @@ const data = {
       items: [],
     },
     {
-      title: "Blocks",
+      title: "Lib",
       url: "#",
-      icon: Blocks,
+      icon: LibraryBig,
       items: [],
     },
   ],

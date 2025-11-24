@@ -1,13 +1,12 @@
 "use client";
 
+import CodeContainer from "@/components/code-container";
 import SingleImageUploader from "@/components/helisa/components/upload-files/single-image-uploader";
 import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileMetadata } from "@/hooks/use-file-upload";
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const FileUploaderPage = () => {
   const handleUpload = (file: File | FileMetadata | null) => {
@@ -66,9 +65,7 @@ const FileUploaderPage = () => {
         </TabsContent>
         <TabsContent value="code">
           {/* Code */}
-          <SyntaxHighlighter style={github} language="typescript">
-            {codeString}
-          </SyntaxHighlighter>
+          <CodeContainer>{codeString}</CodeContainer>
         </TabsContent>
       </Tabs>
     </LayoutContainer>
