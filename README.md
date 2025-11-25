@@ -21,3 +21,13 @@ This is a template for creating a custom registry using Next.js.
 ## Documentation
 
 Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+
+
+## Como agregar nuevos componentes
+
+1. se deben agregar los archivos en la carpeta `registry/helisa` en la carpeta correspondiente (components, hooks, pages, etc)
+2. luego de que se crea el componente se debe hacer el registro en el archivo del mismo nivel llamado `_registry.ts`
+3. finalmente se debe correr el comando `pnpm registry:build` para que se actualice el registro, esto creara el archivo `registry.json` con la informacion de los componentes
+4. para probar los cambios localmente se puede correr el comando `pnpm dev` y luego en otro proyecto usar el comando `npx shadcn@latest add http://localhost:3000/r/{nombre_componente}.json`
+
+Nota: Recordar ejecutar el `pnpm prettier:format` y `pnpm lint` para evitar errores en los despliegues.
