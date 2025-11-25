@@ -17,6 +17,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 export function NavMain({
   items,
@@ -77,9 +78,9 @@ export function NavMain({
                                 {subItem.items.map((nestedItem) => (
                                   <SidebarMenuSubItem key={nestedItem.title}>
                                     <SidebarMenuSubButton asChild>
-                                      <a href={nestedItem.url}>
+                                      <Link href={nestedItem.url}>
                                         <span>{nestedItem.title}</span>
-                                      </a>
+                                      </Link>
                                     </SidebarMenuSubButton>
                                   </SidebarMenuSubItem>
                                 ))}
@@ -92,9 +93,9 @@ export function NavMain({
                     return (
                       <SidebarMenuSubItem key={subItem.title}>
                         <SidebarMenuSubButton asChild>
-                          <a href={subItem.url}>
+                          <Link href={subItem.url}>
                             <span>{subItem.title}</span>
-                          </a>
+                          </Link>
                         </SidebarMenuSubButton>
                       </SidebarMenuSubItem>
                     );
