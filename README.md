@@ -22,7 +22,6 @@ This is a template for creating a custom registry using Next.js.
 
 Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
 
-
 ## Como agregar nuevos componentes
 
 1. se deben agregar los archivos en la carpeta `registry/helisa` en la carpeta correspondiente (components, hooks, pages, etc)

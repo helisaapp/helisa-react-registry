@@ -59,6 +59,20 @@ const data = {
           url: "/docs/ui/company-switcher",
         },
         {
+          title: "Data Table",
+          url: "#",
+          items: [
+            {
+              title: "Basic Pagination",
+              url: "/docs/ui/data-table/data-table-with-basic-pagination",
+            },
+            {
+              title: "Cursor Pagination",
+              url: "/docs/ui/data-table/data-table-with-cursor-pagination",
+            },
+          ],
+        },
+        {
           title: "File Uploader",
           url: "/docs/ui/file-uploader",
         },
@@ -85,21 +99,6 @@ const data = {
         {
           title: "Typography",
           url: "/docs/ui/typography",
-        },
-      ],
-    },
-    {
-      title: "Data Table",
-      url: "#",
-      icon: Command,
-      items: [
-        {
-          title: "Basic Pagination",
-          url: "/docs/ui/data-table/data-table-with-basic-pagination",
-        },
-        {
-          title: "Cursor Pagination",
-          url: "/docs/ui/data-table/data-table-with-cursor-pagination",
         },
       ],
     },

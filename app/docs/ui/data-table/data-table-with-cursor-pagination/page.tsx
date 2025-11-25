@@ -6,7 +6,7 @@ import CodeContainer from "@/components/code-container";
 import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { DataTable } from "@/components/helisa/components/data-table/data-table";
+import { DataTable } from "@/registry/helisa/components/data-table/data-table";
 import { Badge } from "@/components/ui/badge";
 import { CompanyInfo, DocumentTypeEnum } from "../shared-types";
 import { mockCompanies } from "../shared-mock-data";
