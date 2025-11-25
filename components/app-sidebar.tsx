@@ -59,6 +59,10 @@ const data = {
           url: "/docs/ui/company-switcher",
         },
         {
+          title: "DataTable",
+          url: "/docs/ui/datatable",
+        },
+        {
           title: "File Uploader",
           url: "/docs/ui/file-uploader",
         },
