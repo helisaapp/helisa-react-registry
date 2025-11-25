@@ -13,3 +13,16 @@ export interface CompanyInfo {
   phone?: string;
   dateCreation?: string;
 }
+
+// Cursor pagination types
+export interface CursorInfo {
+  cursor: string;
+  hasNext: boolean;
+  hasPrevious: boolean;
+}
+
+export interface CursorPaginatedResponse<T> {
+  data: T[];
+  pageInfo: CursorInfo;
+  totalCount: number;
+}

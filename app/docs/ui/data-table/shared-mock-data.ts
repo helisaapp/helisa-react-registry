@@ -1,4 +1,4 @@
-import { CompanyInfo, DocumentTypeEnum } from "./types";
+import { CompanyInfo, DocumentTypeEnum } from "./shared-types";
 
 export const mockCompanies: CompanyInfo[] = [
   {
