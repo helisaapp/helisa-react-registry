@@ -22,7 +22,11 @@ import { cn } from "@/lib/utils";
 import { Check, PlusCircle } from "lucide-react";
 import * as React from "react";
 
-interface SelectMultiProps {
+interface SelectMultiProps
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof CommandInput>,
+    "value" | "onChange"
+  > {
   title: string;
   options: {
     label: string;
@@ -40,6 +44,7 @@ export const SelectMulti = ({
   value = [],
   onChange,
   placeholder,
+  ...props
 }: SelectMultiProps) => {
   const [selectedValues, setSelectedValues] = React.useState<Set<string>>(
     new Set(value),
@@ -116,7 +121,7 @@ export const SelectMulti = ({
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0" align="start">
         <Command>
-          <CommandInput placeholder={placeholder ?? title} />
+          <CommandInput placeholder={placeholder ?? title} {...props} />
           <CommandList>
             <CommandEmpty>Sin resultados.</CommandEmpty>
             <CommandGroup>

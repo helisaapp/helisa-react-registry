@@ -20,6 +20,7 @@ const NavTabsPage = () => {
         value: "tab-1",
         label: "Overview",
         icon: HouseIcon,
+        content: <div>Contenido de la pestaña Overview</div>,
       },
       {
         value: "tab-2",
@@ -30,6 +31,7 @@ const NavTabsPage = () => {
           variant: "secondary",
           className: "ms-1.5 min-w-5 bg-primary/15 px-1",
         },
+        content: <div>Contenido de la pestaña Projects</div>,
       },
       {
         value: "tab-3",
@@ -38,21 +40,25 @@ const NavTabsPage = () => {
         badge: {
           label: "New",
         },
+        content: <div>Contenido de la pestaña Packages</div>,
       },
       {
         value: "tab-4",
         label: "Team",
         icon: UsersRoundIcon,
+        content: <div>Contenido de la pestaña Team</div>,
       },
       {
         value: "tab-5",
         label: "Insights",
         icon: ChartLine,
+        content: <div>Contenido de la pestaña Insights</div>,
       },
       {
         value: "tab-6",
         label: "Settings",
         icon: SettingsIcon,
+        content: <div>Contenido de la pestaña Settings</div>,
       },
     ];
 
@@ -78,6 +84,7 @@ const NavTabsPage = () => {
         value: "tab-1",
         label: "Overview",
         icon: HouseIcon,
+        content: <div>Contenido de la pestaña Overview</div>,
       },
       {
         value: "tab-2",
@@ -88,6 +95,7 @@ const NavTabsPage = () => {
           variant: "secondary",
           className: "ms-1.5 min-w-5 bg-primary/15 px-1",
         },
+        content: <div>Contenido de la pestaña Projects</div>,
       },
       {
         value: "tab-3",
@@ -96,21 +104,25 @@ const NavTabsPage = () => {
         badge: {
           label: "New",
         },
+        content: <div>Contenido de la pestaña Packages</div>,
       },
       {
         value: "tab-4",
         label: "Team",
         icon: UsersRoundIcon,
+        content: <div>Contenido de la pestaña Team</div>,
       },
       {
         value: "tab-5",
         label: "Insights",
         icon: ChartLine,
+        content: <div>Contenido de la pestaña Insights</div>,
       },
       {
         value: "tab-6",
         label: "Settings",
         icon: SettingsIcon,
+        content: <div>Contenido de la pestaña Settings</div>,
       },
     ];
 

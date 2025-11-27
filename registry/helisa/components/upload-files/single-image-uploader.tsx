@@ -109,6 +109,7 @@ export default function SingleImageUploader({
                 variant="outline"
                 className="mt-4"
                 onClick={openFileDialog}
+                type="button"
               >
                 <UploadIcon
                   className="-ms-1 size-4 opacity-60"
