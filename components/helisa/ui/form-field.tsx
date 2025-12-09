@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Field,
   FieldContent,
@@ -143,26 +145,52 @@ export function FormBase<
   );
 }
 
-export const FormInput: FormControlFunc = (props) => {
-  return <FormBase {...props}>{(field) => <Input {...field} />}</FormBase>;
+export const FormInput: FormControlFunc<
+  React.ComponentPropsWithoutRef<typeof Input>
+> = ({ placeholder, type, disabled, ...props }) => {
+  return (
+    <FormBase {...props}>
+      {(field) => (
+        <Input
+          {...field}
+          placeholder={placeholder}
+          type={type}
+          disabled={disabled}
+        />
+      )}
+    </FormBase>
+  );
 };
 
-export const FormTextarea: FormControlFunc = (props) => {
-  return <FormBase {...props}>{(field) => <Textarea {...field} />}</FormBase>;
+export const FormTextarea: FormControlFunc<
+  React.ComponentPropsWithoutRef<typeof Textarea>
+> = ({ placeholder, rows, disabled, ...props }) => {
+  return (
+    <FormBase {...props}>
+      {(field) => (
+        <Textarea
+          {...field}
+          placeholder={placeholder}
+          rows={rows}
+          disabled={disabled}
+        />
+      )}
+    </FormBase>
+  );
 };
 
-export const FormSelect: FormControlFunc<{ children: ReactNode }> = ({
-  children,
-  ...props
-}) => {
+export const FormSelect: FormControlFunc<
+  { children: ReactNode } & React.ComponentPropsWithoutRef<typeof SelectTrigger>
+> = ({ children, disabled, ...props }) => {
   return (
     <FormBase {...props}>
       {({ onChange, onBlur, ...field }) => (
-        <Select {...field} onValueChange={onChange}>
+        <Select {...field} onValueChange={onChange} disabled={disabled}>
           <SelectTrigger
             aria-invalid={field["aria-invalid"]}
             id={field.id}
             onBlur={onBlur}
+            disabled={disabled}
           >
             <SelectValue />
           </SelectTrigger>
@@ -173,21 +201,35 @@ export const FormSelect: FormControlFunc<{ children: ReactNode }> = ({
   );
 };
 
-export const FormCheckbox: FormControlFunc = (props) => {
+export const FormCheckbox: FormControlFunc<
+  React.ComponentPropsWithoutRef<typeof Checkbox>
+> = ({ disabled, ...props }) => {
   return (
     <FormBase {...props} horizontal controlFirst>
       {({ onChange, value, ...field }) => (
-        <Checkbox {...field} checked={value} onCheckedChange={onChange} />
+        <Checkbox
+          {...field}
+          checked={value}
+          onCheckedChange={onChange}
+          disabled={disabled}
+        />
       )}
     </FormBase>
   );
 };
 
-export const FormSwitch: FormControlFunc = (props) => {
+export const FormSwitch: FormControlFunc<
+  React.ComponentPropsWithoutRef<typeof Switch>
+> = ({ disabled, ...props }) => {
   return (
     <FormBase {...props} horizontal controlFirst>
       {({ onChange, value, ...field }) => (
-        <Switch {...field} checked={value} onCheckedChange={onChange} />
+        <Switch
+          {...field}
+          checked={value}
+          onCheckedChange={onChange}
+          disabled={disabled}
+        />
       )}
     </FormBase>
   );

@@ -140,7 +140,7 @@ export const SelectMulti = ({
                           : "opacity-50 [&_svg]:invisible",
                       )}
                     >
-                      <Check />
+                      <Check className="text-primary-foreground" />
                     </div>
                     {option.icon && (
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
@@ -150,21 +150,20 @@ export const SelectMulti = ({
                 );
               })}
             </CommandGroup>
-            {selectedValues.size > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={handleClear}
-                    className="justify-center text-center"
-                  >
-                    Limpiar selección
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )}
           </CommandList>
         </Command>
+        {selectedValues.size > 0 && (
+          <>
+            <Separator />
+            <Button
+              variant="ghost"
+              className="w-full rounded-none rounded-b-md"
+              onClick={handleClear}
+            >
+              Limpiar
+            </Button>
+          </>
+        )}
       </PopoverContent>
     </Popover>
   );

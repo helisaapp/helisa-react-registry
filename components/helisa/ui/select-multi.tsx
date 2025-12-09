@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,7 +9,6 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from "@/components/ui/command";
 import {
   Popover,
@@ -20,7 +21,11 @@ import { cn } from "@/lib/utils";
 import { Check, PlusCircle } from "lucide-react";
 import * as React from "react";
 
-interface SelectMultiProps {
+interface SelectMultiProps
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof CommandInput>,
+    "value" | "onChange"
+  > {
   title: string;
   options: {
     label: string;
@@ -38,6 +43,7 @@ export const SelectMulti = ({
   value = [],
   onChange,
   placeholder,
+  ...props
 }: SelectMultiProps) => {
   const [selectedValues, setSelectedValues] = React.useState<Set<string>>(
     new Set(value),
@@ -114,7 +120,7 @@ export const SelectMulti = ({
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0" align="start">
         <Command>
-          <CommandInput placeholder={placeholder ?? title} />
+          <CommandInput placeholder={placeholder ?? title} {...props} />
           <CommandList>
             <CommandEmpty>Sin resultados.</CommandEmpty>
             <CommandGroup>
@@ -133,7 +139,7 @@ export const SelectMulti = ({
                           : "opacity-50 [&_svg]:invisible",
                       )}
                     >
-                      <Check />
+                      <Check className="text-primary-foreground" />
                     </div>
                     {option.icon && (
                       <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
@@ -143,21 +149,20 @@ export const SelectMulti = ({
                 );
               })}
             </CommandGroup>
-            {selectedValues.size > 0 && (
-              <>
-                <CommandSeparator />
-                <CommandGroup>
-                  <CommandItem
-                    onSelect={handleClear}
-                    className="justify-center text-center"
-                  >
-                    Limpiar selección
-                  </CommandItem>
-                </CommandGroup>
-              </>
-            )}
           </CommandList>
         </Command>
+        {selectedValues.size > 0 && (
+          <>
+            <Separator />
+            <Button
+              variant="ghost"
+              className="w-full rounded-none rounded-b-md"
+              onClick={handleClear}
+            >
+              Limpiar
+            </Button>
+          </>
+        )}
       </PopoverContent>
     </Popover>
   );

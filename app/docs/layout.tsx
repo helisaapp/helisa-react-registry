@@ -5,6 +5,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function LayoutDocs({
   children,
@@ -47,6 +48,7 @@ export default function LayoutDocs({
         </div> */}
         <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
       </SidebarInset>
+      <Toaster richColors />
     </SidebarProvider>
   );
 }
