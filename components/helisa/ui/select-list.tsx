@@ -130,12 +130,12 @@ function SelectList<T>({
         >
           <Command>
             <CommandInput placeholder={searchPlaceholder} />
-            <CommandList className="max-h-[unset] min-w-[unset] overflow-y-hidden">
+            <CommandList className="max-h-[unset] overflow-y-hidden">
               {data.length ? (
                 <>
                   <CommandEmpty>{emptyMessage}</CommandEmpty>
 
-                  <CommandGroup className="overflow-y-auto">
+                  <CommandGroup className="max-h-[20rem] overflow-y-auto">
                     {data.map((item, index) => {
                       const itemValue = getOptionValue(item);
                       const itemLabel = getOptionLabel(item);
@@ -162,6 +162,7 @@ function SelectList<T>({
                       );
                     })}
                   </CommandGroup>
+
                   <CommandSeparator />
 
                   <CommandGroup>
