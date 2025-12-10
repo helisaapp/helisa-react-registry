@@ -55,6 +55,26 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "select-list",
+    type: "registry:ui",
+    title: "Select List",
+    description: "A single-select dropdown list component.",
+    registryDependencies: [
+      "button",
+      "popover",
+      "command",
+      "scroll-area",
+      "separator",
+    ],
+    files: [
+      {
+        path: "ui/select-list.tsx",
+        type: "registry:ui",
+        target: "components/helisa/ui/select-list.tsx",
+      },
+    ],
+  },
+  {
     name: "select-multi",
     type: "registry:ui",
     title: "Select Multi",
