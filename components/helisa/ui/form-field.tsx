@@ -132,7 +132,7 @@ export function FormBase<
               </>
             ) : (
               <>
-                <FieldContent>{labelElement}</FieldContent>
+                {labelElement}
                 {control}
                 {descriptionElement}
                 {errorElem}
