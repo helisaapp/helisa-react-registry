@@ -4,7 +4,11 @@ import { github } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const CodeContainer = ({ children }: { children: string }) => {
   return (
-    <SyntaxHighlighter style={github} language="typescript">
+    <SyntaxHighlighter
+      className="rounded-lg"
+      style={github}
+      language="typescript"
+    >
       {children}
     </SyntaxHighlighter>
   );

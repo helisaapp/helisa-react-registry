@@ -93,6 +93,10 @@ const data = {
           url: "/docs/ui/nav-tabs",
         },
         {
+          title: "Select List",
+          url: "/docs/ui/select-list",
+        },
+        {
           title: "Select Multi",
           url: "/docs/ui/select-multi",
         },
