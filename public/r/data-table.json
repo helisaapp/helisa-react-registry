@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "data-table",
-  "type": "registry:component",
   "title": "Data Table",
   "description": "A versatile data table component with features like sorting, filtering, pagination, and row selection.",
   "dependencies": [
@@ -41,5 +40,6 @@
       "type": "registry:component",
       "target": "components/helisa/components/data-table/data-table-column-header.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }

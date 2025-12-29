@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "nav-tabs",
-  "type": "registry:ui",
   "title": "Nav Tabs",
   "description": "A navigation tab component for tab-based navigation interfaces.",
   "registryDependencies": ["badge", "scroll-area", "tabs"],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/nav-tabs.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

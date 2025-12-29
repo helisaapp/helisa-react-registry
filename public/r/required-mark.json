@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "required-mark",
-  "type": "registry:ui",
   "title": "Required Mark",
   "description": "A simple asterisk to indicate required fields.",
   "files": [
@@ -11,5 +10,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/required-mark.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
