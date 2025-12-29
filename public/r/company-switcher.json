@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "company-switcher",
-  "type": "registry:ui",
   "title": "Company Switcher",
   "description": "A company switcher component for sidebar navigation.",
   "registryDependencies": ["dropdown-menu", "sidebar"],
@@ -12,5 +11,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/company-switcher.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

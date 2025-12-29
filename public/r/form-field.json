@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "form-field",
-  "type": "registry:ui",
   "title": "Form Field",
   "description": "A component for form field layout and validation.",
   "dependencies": ["react-hook-form"],
@@ -22,5 +21,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/form-field.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
