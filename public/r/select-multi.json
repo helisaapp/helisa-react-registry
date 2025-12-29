@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-multi",
-  "type": "registry:ui",
   "title": "Select Multi",
   "description": "A multi-select with badges",
   "registryDependencies": [
@@ -18,5 +17,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/select-multi.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

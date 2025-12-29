@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-print",
-  "type": "registry:hook",
   "title": "usePrint Hook",
   "description": "A hook that handles printing functionality.",
   "files": [
@@ -11,5 +10,6 @@
       "type": "registry:hook",
       "target": "hooks/use-print.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-file-upload",
-  "type": "registry:hook",
   "title": "useFileUpload Hook",
   "description": "A hook that handles file upload functionality.",
   "files": [
@@ -11,5 +10,6 @@
       "type": "registry:hook",
       "target": "hooks/use-file-upload.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }

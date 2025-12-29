@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "use-debounce",
-  "type": "registry:hook",
   "title": "useDebounce Hook",
   "description": "A hook that debounces a value over a specified delay.",
   "files": [
@@ -11,5 +10,6 @@
       "type": "registry:hook",
       "target": "hooks/use-debounce.tsx"
     }
-  ]
+  ],
+  "type": "registry:hook"
 }
