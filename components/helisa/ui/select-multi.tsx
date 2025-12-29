@@ -1,31 +1,16 @@
-"use client";
+'use client';
 
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Separator } from "@/components/ui/separator";
-import { cn } from "@/lib/utils";
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from '@/components/ui/command';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
 
-import { Check, PlusCircle } from "lucide-react";
-import * as React from "react";
+import { Check, PlusCircle } from 'lucide-react';
+import * as React from 'react';
 
-interface SelectMultiProps
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof CommandInput>,
-    "value" | "onChange"
-  > {
+interface SelectMultiProps extends Omit<React.ComponentPropsWithoutRef<typeof CommandInput>, 'value' | 'onChange'> {
   title: string;
   options: {
     label: string;
@@ -37,17 +22,8 @@ interface SelectMultiProps
   placeholder?: string;
 }
 
-export const SelectMulti = ({
-  title,
-  options,
-  value = [],
-  onChange,
-  placeholder,
-  ...props
-}: SelectMultiProps) => {
-  const [selectedValues, setSelectedValues] = React.useState<Set<string>>(
-    new Set(value),
-  );
+export const SelectMulti = ({ title, options, value = [], onChange, placeholder, ...props }: SelectMultiProps) => {
+  const [selectedValues, setSelectedValues] = React.useState<Set<string>>(new Set(value));
 
   // Add this useEffect to sync internal state with props
   React.useEffect(() => {
@@ -80,35 +56,26 @@ export const SelectMulti = ({
           size="sm"
           className="h-8 border-dashed select-none"
           aria-label={`Select ${title}`}
+          disabled={props.disabled}
         >
           <PlusCircle className="mr-2" />
           {title}
           {selectedValues.size > 0 && (
             <>
               <Separator orientation="vertical" className="mx-2 h-4" />
-              <Badge
-                variant="secondary"
-                className="rounded-sm px-1 font-normal lg:hidden"
-              >
+              <Badge variant="secondary" className="rounded-sm px-1 font-normal lg:hidden">
                 {selectedValues.size}
               </Badge>
               <div className="hidden space-x-1 lg:flex">
                 {selectedValues.size > 2 ? (
-                  <Badge
-                    variant="secondary"
-                    className="rounded-sm px-1 font-normal"
-                  >
+                  <Badge variant="secondary" className="rounded-sm px-1 font-normal">
                     {selectedValues.size} seleccionados
                   </Badge>
                 ) : (
                   options
                     .filter((option) => selectedValues.has(option.value))
                     .map((option) => (
-                      <Badge
-                        variant="secondary"
-                        key={option.value}
-                        className="rounded-sm px-1 font-normal"
-                      >
+                      <Badge variant="secondary" key={option.value} className="rounded-sm px-1 font-normal">
                         {option.label}
                       </Badge>
                     ))
@@ -118,7 +85,7 @@ export const SelectMulti = ({
           )}
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0" align="start">
+      <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
         <Command>
           <CommandInput placeholder={placeholder ?? title} {...props} />
           <CommandList>
@@ -127,23 +94,16 @@ export const SelectMulti = ({
               {options.map((option) => {
                 const isSelected = selectedValues.has(option.value);
                 return (
-                  <CommandItem
-                    key={option.value}
-                    onSelect={() => handleSelect(option.value)}
-                  >
+                  <CommandItem key={option.value} onSelect={() => handleSelect(option.value)}>
                     <div
                       className={cn(
-                        "mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary",
-                        isSelected
-                          ? "bg-primary text-primary-foreground"
-                          : "opacity-50 [&_svg]:invisible",
+                        'mr-2 flex h-4 w-4 items-center justify-center rounded-sm border border-primary',
+                        isSelected ? 'bg-primary text-primary-foreground' : 'opacity-50 [&_svg]:invisible',
                       )}
                     >
                       <Check className="text-primary-foreground" />
                     </div>
-                    {option.icon && (
-                      <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                    )}
+                    {option.icon && <option.icon className="mr-2 h-4 w-4 text-muted-foreground" />}
                     <span>{option.label}</span>
                   </CommandItem>
                 );
@@ -154,11 +114,7 @@ export const SelectMulti = ({
         {selectedValues.size > 0 && (
           <>
             <Separator />
-            <Button
-              variant="ghost"
-              className="w-full rounded-none rounded-b-md"
-              onClick={handleClear}
-            >
+            <Button variant="ghost" className="w-full rounded-none rounded-b-md" onClick={handleClear}>
               Limpiar
             </Button>
           </>
