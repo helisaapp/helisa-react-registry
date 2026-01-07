@@ -101,6 +101,10 @@ const data = {
           url: "/docs/ui/select-multi",
         },
         {
+          title: "Select Search",
+          url: "/docs/ui/select-search",
+        },
+        {
           title: "Skeleton",
           url: "/docs/ui/custom-skeleton",
         },

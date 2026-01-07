@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "layout-container",
+  "type": "registry:ui",
   "title": "Layout Container",
   "description": "A flexible container component for layout purposes.",
   "files": [
@@ -10,6 +11,5 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/layout-container.tsx"
     }
-  ],
-  "type": "registry:ui"
+  ]
 }
