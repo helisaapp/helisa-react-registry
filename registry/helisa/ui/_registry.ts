@@ -95,6 +95,20 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "select-search",
+    type: "registry:ui",
+    title: "Select Search",
+    description: "A searchable select dropdown component.",
+    registryDependencies: ["button", "popover", "command", "separator"],
+    files: [
+      {
+        path: "ui/select-search.tsx",
+        type: "registry:ui",
+        target: "components/helisa/ui/select-search.tsx",
+      },
+    ],
+  },
+  {
     name: "form-field",
     type: "registry:ui",
     title: "Form Field",

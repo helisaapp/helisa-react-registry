@@ -21,10 +21,11 @@ import { cn } from "@/lib/utils";
 import { Check, PlusCircle } from "lucide-react";
 import * as React from "react";
 
-interface SelectMultiProps extends Omit<
-  React.ComponentPropsWithoutRef<typeof CommandInput>,
-  "value" | "onChange"
-> {
+interface SelectMultiProps
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof CommandInput>,
+    "value" | "onChange"
+  > {
   title: string;
   options: {
     label: string;

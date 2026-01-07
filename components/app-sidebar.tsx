@@ -101,6 +101,10 @@ const data = {
           url: "/docs/ui/select-multi",
         },
         {
+          title: "Select Search",
+          url: "/docs/ui/select-search",
+        },
+        {
           title: "Skeleton",
           url: "/docs/ui/custom-skeleton",
         },
@@ -120,7 +124,12 @@ const data = {
       title: "Hooks",
       url: "#",
       icon: Webhook,
-      items: [],
+      items: [
+        {
+          title: "Use-debounce",
+          url: "/docs/hooks/use-debounce",
+        },
+      ],
     },
     {
       title: "Lib",

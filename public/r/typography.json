@@ -1,6 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "typography",
+  "type": "registry:ui",
   "title": "Typography",
   "description": "A set of typographic components for consistent text styling.",
   "files": [
@@ -10,6 +11,5 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/typography.tsx"
     }
-  ],
-  "type": "registry:ui"
+  ]
 }
