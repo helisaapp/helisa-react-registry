@@ -136,7 +136,7 @@ function SelectSearch<T>({
                 onSearchChange?.(value);
               }}
             />
-            <CommandList className="max-h-60 overflow-y-hidden">
+            <CommandList className="max-h-60 overflow-y-auto">
               {isLoading && <CommandEmpty>Buscando...</CommandEmpty>}
 
               {!isLoading && search.length < minLength && (
