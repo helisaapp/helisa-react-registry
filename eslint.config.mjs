@@ -1,12 +1,12 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import js from '@eslint/js';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import tsParser from '@typescript-eslint/parser';
+import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
+import typescriptEslint from "@typescript-eslint/eslint-plugin";
+import tsParser from "@typescript-eslint/parser";
 // import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
-import nextTypescript from 'eslint-config-next/typescript';
-import { defineConfig, globalIgnores } from 'eslint/config';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import nextTypescript from "eslint-config-next/typescript";
+import { defineConfig, globalIgnores } from "eslint/config";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,24 +17,30 @@ const compat = new FlatCompat({
 });
 
 export default defineConfig([
-  globalIgnores(['**/node_modules/', '**/.next/', '**/public/', '**/tailwind.config.js', '**/components/ui/*']),
+  globalIgnores([
+    "**/node_modules/",
+    "**/.next/",
+    "**/public/",
+    "**/tailwind.config.js",
+    "**/components/ui/*",
+  ]),
   {
     extends: [
       // ...nextCoreWebVitals,
       ...nextTypescript,
-      ...compat.extends('plugin:@typescript-eslint/recommended'),
-      ...compat.extends('plugin:prettier/recommended'),      
-      ...compat.extends('prettier'),
+      ...compat.extends("plugin:@typescript-eslint/recommended"),
+      ...compat.extends("plugin:prettier/recommended"),
+      ...compat.extends("prettier"),
     ],
 
     plugins: {
-      '@typescript-eslint': typescriptEslint,
+      "@typescript-eslint": typescriptEslint,
     },
 
     languageOptions: {
       parser: tsParser,
       ecmaVersion: 2021,
-      sourceType: 'module',
+      sourceType: "module",
 
       parserOptions: {
         ecmaFeatures: {
@@ -44,15 +50,15 @@ export default defineConfig([
     },
 
     rules: {
-      '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-unused-vars': 'error',
-      '@typescript-eslint/no-explicit-any': 'off',
-      'react/prop-types': 'off',
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "react/prop-types": "off",
 
-      'prettier/prettier': [
-        'error',
+      "prettier/prettier": [
+        "error",
         {
-          endOfLine: 'auto',
+          endOfLine: "auto",
         },
       ],
     },

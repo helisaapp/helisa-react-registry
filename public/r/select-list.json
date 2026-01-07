@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-list",
-  "type": "registry:ui",
   "title": "Select List",
   "description": "A single-select dropdown list component.",
   "registryDependencies": [
@@ -18,5 +17,6 @@
       "type": "registry:ui",
       "target": "components/helisa/ui/select-list.tsx"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "single-image-uploader",
-  "type": "registry:component",
   "title": "Single Image Uploader",
   "description": "A component for uploading a single image file with preview and validation.",
   "registryDependencies": [
@@ -15,5 +14,6 @@
       "type": "registry:component",
       "target": "components/helisa/components/upload-files/single-image-uploader.tsx"
     }
-  ]
+  ],
+  "type": "registry:component"
 }
