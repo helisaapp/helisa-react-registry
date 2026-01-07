@@ -7,6 +7,7 @@ import CodeContainer from "@/components/code-container";
 import React from "react";
 import { useState, useEffect } from "react";
 import SelectSearch from "@/components/helisa/ui/select-search";
+import { useDebounce } from "@/hooks/use-debounce";
 
 type City = {
   label: string;
@@ -30,8 +31,12 @@ export const RemoteSearchExample = () => {
   const [data, setData] = useState<City[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+  // Valor debounced usando el hook useDebounce
+  // Evita ejecutar búsquedas en cada pulsación de tecla
+  const debouncedSearch = useDebounce(search, 500);
+
   useEffect(() => {
-    if (search.length < 2) {
+    if (debouncedSearch.length < 2) {
       setData([]);
       return;
     }
@@ -40,15 +45,15 @@ export const RemoteSearchExample = () => {
 
     const timer = setTimeout(() => {
       const filtered = MOCK_CITIES.filter((city) =>
-        city.label.toLowerCase().includes(search.toLowerCase()),
+        city.label.toLowerCase().includes(debouncedSearch.toLowerCase()),
       );
 
       setData(filtered);
       setIsLoading(false);
-    }, 600);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, [search]);
+  }, [debouncedSearch]);
 
   return (
     <SelectSearch
@@ -59,6 +64,7 @@ export const RemoteSearchExample = () => {
       getOptionLabel={(option) => option.label}
       isLoading={isLoading}
       onSearchChange={setSearch}
+      placeholder="Buscar ciudad"
     />
   );
 };
@@ -69,8 +75,12 @@ const codeRemoteSearch = `export const RemoteSearchExample = () => {
   const [data, setData] = useState<City[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+// Valor debounced usando el hook useDebounce
+// Evita ejecutar búsquedas en cada pulsación de tecla
+  const debouncedSearch = useDebounce(search, 500);
+
   useEffect(() => {
-    if (search.length < 2) {
+    if (debouncedSearch.length < 2) {
       setData([]);
       return;
     }
@@ -79,15 +89,15 @@ const codeRemoteSearch = `export const RemoteSearchExample = () => {
 
     const timer = setTimeout(() => {
       const filtered = MOCK_CITIES.filter((city) =>
-        city.label.toLowerCase().includes(search.toLowerCase())
+        city.label.toLowerCase().includes(debouncedSearch.toLowerCase()),
       );
 
       setData(filtered);
       setIsLoading(false);
-    }, 600);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, [search]);
+  }, [debouncedSearch]);
 
   return (
     <SelectSearch
@@ -98,6 +108,7 @@ const codeRemoteSearch = `export const RemoteSearchExample = () => {
       getOptionLabel={(option) => option.label}
       isLoading={isLoading}
       onSearchChange={setSearch}
+      placeholder="Buscar ciudad"
     />
   );
 };`;
@@ -108,8 +119,12 @@ export const ClearOnSelectExample = () => {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const [search, setSearch] = useState("");
 
+  // Valor debounced usando el hook useDebounce
+  // Evita ejecutar búsquedas en cada pulsación de tecla
+  const debouncedSearch = useDebounce(search, 500);
+
   useEffect(() => {
-    if (search.length < 2) {
+    if (debouncedSearch.length < 2) {
       setData([]);
       return;
     }
@@ -118,15 +133,15 @@ export const ClearOnSelectExample = () => {
 
     const timer = setTimeout(() => {
       const filtered = MOCK_CITIES.filter((city) =>
-        city.label.toLowerCase().includes(search.toLowerCase()),
+        city.label.toLowerCase().includes(debouncedSearch.toLowerCase()),
       );
 
       setData(filtered);
       setIsLoading(false);
-    }, 600);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, [search]);
+  }, [debouncedSearch]);
 
   return (
     <div className="space-y-3">
@@ -167,8 +182,12 @@ const codeClearOnSelect = `export const ClearOnSelectExample = () => {
   const [selectedValues, setSelectedValues] = useState<string[]>([]);
   const [search, setSearch] = useState("");
 
+  // Valor debounced usando el hook useDebounce
+  // Evita ejecutar búsquedas en cada pulsación de tecla
+  const debouncedSearch = useDebounce(search, 500);
+
   useEffect(() => {
-    if (search.length < 2) {
+    if (debouncedSearch.length < 2) {
       setData([]);
       return;
     }
@@ -177,15 +196,15 @@ const codeClearOnSelect = `export const ClearOnSelectExample = () => {
 
     const timer = setTimeout(() => {
       const filtered = MOCK_CITIES.filter((city) =>
-        city.label.toLowerCase().includes(search.toLowerCase())
+        city.label.toLowerCase().includes(debouncedSearch.toLowerCase())
       );
 
       setData(filtered);
       setIsLoading(false);
-    }, 600);
+    }, 400);
 
     return () => clearTimeout(timer);
-  }, [search]);
+  }, [debouncedSearch]);
 
   return (
     <div className="space-y-3">
@@ -227,9 +246,20 @@ const SelectSearchPage = () => {
         <Typography variant="h1">Select Search</Typography>
         <Typography variant="lead">
           Componente genérico que permite buscar y seleccionar elementos desde
-          una fuente local o remota, soportando búsqueda controlada, carga
+          una fuente local o remota. Soporta búsqueda controlada, carga
           asíncrona y un modo configurable que limpia el valor seleccionado al
           elegir una opción.
+          <br />
+          <br />
+          Para optimizar búsquedas remotas y evitar llamadas innecesarias al
+          backend, se recomienda combinarlo con el hook{" "}
+          <a
+            href="/docs/hooks/use-debounce"
+            className="underline font-medium text-primary hover:text-primary/80"
+          >
+            useDebounce
+          </a>
+          , el cual también se encuentra disponible en el registry.
         </Typography>
       </div>
 
@@ -242,10 +272,16 @@ const SelectSearchPage = () => {
 
       <div className="mt-10 flex flex-col space-y-10">
         <Tabs defaultValue="preview" className="mt-5">
-          <Typography variant="h2">Ejemplo de búsqueda remota</Typography>
+          <Typography variant="h2">Ejemplo de Búsqueda Remota</Typography>
           <Typography variant="lead">
-            Simula la búsqueda de opciones desde un endpoint remoto, mostrando
-            mensajes de carga y estados vacíos según la interacción del usuario.
+            Simula la búsqueda de opciones desde un endpoint remoto utilizando
+            un valor de búsqueda con <strong>debounce</strong>, evitando
+            ejecutar la búsqueda en cada pulsación de tecla.
+            <br />
+            <br />
+            En este ejemplo se usa el hook <strong>useDebounce</strong>,
+            disponible en el registry, para retrasar la ejecución de la búsqueda
+            hasta que el usuario deje de escribir.
           </Typography>
 
           <TabsList>
@@ -270,6 +306,11 @@ const SelectSearchPage = () => {
             Permite seleccionar múltiples opciones limpiando el valor
             seleccionado tras cada elección, ideal para agregar elementos a una
             lista sin perder el contexto de búsqueda.
+            <br />
+            <br />
+            En este ejemplo, al seleccionar una ciudad, el campo se limpia
+            automáticamente para permitir agregar otra sin necesidad de borrar
+            manualmente el valor.
           </Typography>
 
           <TabsList>

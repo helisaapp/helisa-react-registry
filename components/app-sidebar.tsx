@@ -124,7 +124,12 @@ const data = {
       title: "Hooks",
       url: "#",
       icon: Webhook,
-      items: [],
+      items: [
+        {
+          title: "Use-debounce",
+          url: "/docs/hooks/use-debounce",
+        },
+      ],
     },
     {
       title: "Lib",
