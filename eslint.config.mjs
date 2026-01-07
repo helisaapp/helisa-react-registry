@@ -1,44 +1,60 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import { defineConfig } from "eslint/config";
-import prettier from "eslint-config-prettier/flat";
+import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
+// import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import nextTypescript from 'eslint-config-next/typescript';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  prettier,
-  allConfig: {
-    plugins: [
-      "prettier",
-      "@typescript-eslint/eslint-plugin",
-      "eslint-plugin-next",
-    ],
-    rules: {
-      "no-unused-vars": "off", // Disable the base rule
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          argsIgnorePattern: "^_", // Ignore unused arguments starting with _
-          varsIgnorePattern: "^_", // Ignore unused variables starting with _
-          ignoreRestSiblings: true,
-        },
-      ],
-      // ... other Next.js specific rules
-      "@next/next/no-assign-module-variable": "error",
-    },
-  },
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-const eslintConfig = defineConfig([
-  ...compat.extends(
-    "next/core-web-vitals",
-    "next/typescript",
-    "prettier",
-    "plugin:prettier/recommended",
-  ),
-]);
+export default defineConfig([
+  globalIgnores(['**/node_modules/', '**/.next/', '**/public/', '**/tailwind.config.js', '**/components/ui/*']),
+  {
+    extends: [
+      // ...nextCoreWebVitals,
+      ...nextTypescript,
+      ...compat.extends('plugin:@typescript-eslint/recommended'),
+      ...compat.extends('plugin:prettier/recommended'),      
+      ...compat.extends('prettier'),
+    ],
 
-export default eslintConfig;
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
+    },
+
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: 2021,
+      sourceType: 'module',
+
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+
+    rules: {
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'react/prop-types': 'off',
+
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
+    },
+  },
+]);
