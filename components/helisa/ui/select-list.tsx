@@ -135,7 +135,7 @@ function SelectList<T>({
                 <>
                   <CommandEmpty>{emptyMessage}</CommandEmpty>
 
-                  <CommandGroup className="max-h-[20rem] overflow-y-auto">
+                  <CommandGroup className="max-h-80 overflow-y-auto">
                     {data.map((item, index) => {
                       const itemValue = getOptionValue(item);
                       const itemLabel = getOptionLabel(item);

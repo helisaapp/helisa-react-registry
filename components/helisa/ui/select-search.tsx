@@ -114,7 +114,7 @@ function SelectSearch<T>({
             disabled={disabled}
             data-test-id={testId}
           >
-            <span title={selectedLabel || undefined}>
+            <span className="truncate" title={selectedLabel || undefined}>
               {selectedLabel || (
                 <span className="text-muted-foreground">{placeholder}</span>
               )}
@@ -124,7 +124,7 @@ function SelectSearch<T>({
         </PopoverTrigger>
 
         <PopoverContent
-          className="w-[var(--radix-popover-trigger-width)] p-0"
+          className="w-(--radix-popover-trigger-width) p-0"
           align="start"
         >
           <Command shouldFilter={false}>
