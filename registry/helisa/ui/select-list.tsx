@@ -123,7 +123,7 @@ function SelectList<T>({
 
         <PopoverContent
           className={cn(
-            "w-(--radix-popover-trigger-width) p-0",
+            "w-[var(--radix-popover-trigger-width)] p-0",
             popoverClassName,
           )}
           align="start"
