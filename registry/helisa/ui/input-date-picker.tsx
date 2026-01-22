@@ -19,9 +19,15 @@ import { es } from "react-day-picker/locale";
 export const InputDatePicker = (
   calendarProps: DayPickerProps & {
     buttonVariant?: React.ComponentProps<typeof Button>["variant"];
-  } & { label?: string; clearEnable?: boolean; onClear?: () => void },
+  } & {
+    label?: string;
+    clearEnable?: boolean;
+    onClear?: () => void;
+    dateFormat?: string;
+  },
 ) => {
   const [open, setOpen] = React.useState(false);
+  const dateFormat = calendarProps.dateFormat || "yyyy/MM/dd";
   const handleClear = () => {
     if (calendarProps.onClear) {
       calendarProps.onClear();
@@ -47,7 +53,7 @@ export const InputDatePicker = (
               switch (calendarProps.mode) {
                 case "single":
                   return calendarProps.selected ? (
-                    format(calendarProps.selected, "yyyy/MM/dd")
+                    format(calendarProps.selected, dateFormat)
                   ) : (
                     <span className="text-muted-foreground">
                       Selecciona una fecha
@@ -65,8 +71,8 @@ export const InputDatePicker = (
                 case "range":
                   if (calendarProps.selected?.from) {
                     return calendarProps.selected.to
-                      ? `${format(calendarProps.selected.from, "yyyy/MM/dd")} - ${format(calendarProps.selected.to, "yyyy/MM/dd")}`
-                      : `${format(calendarProps.selected.from, "yyyy/MM/dd")} - ...`;
+                      ? `${format(calendarProps.selected.from, dateFormat)} - ${format(calendarProps.selected.to, dateFormat)}`
+                      : `${format(calendarProps.selected.from, dateFormat)} - ...`;
                   }
                   return (
                     <span className="text-muted-foreground">
