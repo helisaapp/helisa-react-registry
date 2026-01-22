@@ -8,12 +8,13 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Separator } from "@/components/ui/separator";
+import { format } from "date-fns";
+
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
 import { DayPickerProps } from "react-day-picker";
 import { es } from "react-day-picker/locale";
-import { Separator } from "@/components/ui/separator";
-import { format } from "date-fns";
 
 export const InputDatePicker = (
   calendarProps: DayPickerProps & {

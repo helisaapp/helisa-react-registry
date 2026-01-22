@@ -124,7 +124,7 @@ function SelectSearch<T>({
         </PopoverTrigger>
 
         <PopoverContent
-          className="w-(--radix-popover-trigger-width) p-0"
+          className="w-[var(--radix-popover-trigger-width)] p-0 p-0"
           align="start"
         >
           <Command shouldFilter={false}>
