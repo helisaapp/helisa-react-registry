@@ -118,7 +118,30 @@ const data = {
       title: "Blocks",
       url: "#",
       icon: Blocks,
-      items: [],
+      items: [
+        {
+          title: "Authentication",
+          url: "#",
+          items: [
+            {
+              title: "Login",
+              url: "/docs/blocks/authentication/login",
+            },
+            {
+              title: "Register",
+              url: "/docs/blocks/authentication/register",
+            },
+            {
+              title: "Forgot Password",
+              url: "/docs/blocks/authentication/forgot-password",
+            },
+            {
+              title: "Profile",
+              url: "/docs/blocks/authentication/profile",
+            }
+          ],
+        },
+      ],
     },
     {
       title: "Hooks",

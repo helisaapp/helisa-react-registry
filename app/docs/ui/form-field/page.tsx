@@ -54,7 +54,7 @@ const FormFieldPage = () => {
   function onSubmit(data: z.infer<typeof formSchema>) {
     toast("Valores del formulario:", {
       description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+        <pre className="mt-2 w-85 rounded-md bg-slate-950 p-4">
           <code className="text-white">{JSON.stringify(data, null, 2)}</code>
         </pre>
       ),
@@ -166,7 +166,7 @@ export function FormFieldExample() {
 }`;
 
   return (
-    <LayoutContainer maxWidth="3xl">
+    <LayoutContainer maxWidth="5xl">
       <div className="flex flex-col space-y-8">
         <div>
           <Typography variant="h1">Form Field</Typography>
