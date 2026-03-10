@@ -1,6 +1,6 @@
 "use client";
 
-import { FormBase, FormInput } from "@/registry/helisa/ui/form-field";
+import { FormInput } from "../../ui/form-field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, CircleAlert, Mail } from "lucide-react";
 import { useState } from "react";
@@ -65,7 +65,7 @@ const ForgotPassword = ({
         setBackendError(result);
         form.reset({ email: "" });
       }
-    } catch (error) {
+    } catch {
       setBackendError("Ocurrió un error inesperado. Intente nuevamente.");
       form.reset({ email: "" });
     } finally {

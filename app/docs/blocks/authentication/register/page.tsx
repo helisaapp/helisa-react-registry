@@ -24,9 +24,7 @@ const formSchema = z.object({
   firstName: z.string().min(2, "El nombre debe tener al menos 2 caracteres"),
   lastName: z.string().min(2, "El apellido debe tener al menos 2 caracteres"),
   email: z.string().email("Correo electrónico inválido"),
-  password: z
-    .string()
-    .min(8, "La contraseña debe tener al menos 8 caracteres"),
+  password: z.string().min(8, "La contraseña debe tener al menos 8 caracteres"),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -61,9 +59,9 @@ const CodeExample = () => {
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
         alert("¡Cuenta creada exitosamente!");
-      } catch (error) {
+      } catch {
         setBackendError(
-          "Ocurrió un error al crear la cuenta. Intenta nuevamente."
+          "Ocurrió un error al crear la cuenta. Intenta nuevamente.",
         );
       } finally {
         setIsSubmitting(false);
@@ -206,7 +204,7 @@ const CodeExample = () => {
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
         alert("¡Cuenta creada exitosamente!");
-      } catch (error) {
+      } catch {
         setBackendError(
           "Ocurrió un error al crear la cuenta. Intenta nuevamente."
         );
@@ -321,13 +319,12 @@ const RegisterPage = () => {
           interfaz flexible y personalizable que permite configurar los campos
           necesarios según los requisitos de cada aplicación.
           <br />
-          <br />
-          A diferencia de otros componentes, Register actúa como un contenedor
-          que proporciona la estructura visual y el layout, permitiendo que los
-          desarrolladores agreguen o quiten campos del formulario según sus
-          necesidades específicas. Incluye validación personalizable, manejo de
-          errores y una experiencia de usuario optimizada tanto para móviles
-          como para escritorio.
+          <br />A diferencia de otros componentes, Register actúa como un
+          contenedor que proporciona la estructura visual y el layout,
+          permitiendo que los desarrolladores agreguen o quiten campos del
+          formulario según sus necesidades específicas. Incluye validación
+          personalizable, manejo de errores y una experiencia de usuario
+          optimizada tanto para móviles como para escritorio.
         </Typography>
       </div>
 
@@ -363,8 +360,8 @@ const RegisterPage = () => {
             estados de carga y deshabilitado.
           </li>
           <li>
-            <strong>Navegación Integrada:</strong> Botón opcional para volver
-            al login con texto personalizable.
+            <strong>Navegación Integrada:</strong> Botón opcional para volver al
+            login con texto personalizable.
           </li>
           <li>
             <strong>Totalmente Personalizable:</strong> Logos, títulos,
@@ -487,8 +484,8 @@ const RegisterPage = () => {
                   boolean
                 </td>
                 <td className="px-4 py-3 text-sm">
-                  Estado de carga del formulario. Deshabilita el botón y
-                  muestra "Enviando...". Default: false.
+                  Estado de carga del formulario. Deshabilita el botón y muestra
+                  "Enviando...". Default: false.
                 </td>
               </tr>
               <tr>

@@ -62,7 +62,7 @@ const Register = ({
             <h1 className="text-2xl font-extrabold">{label}</h1>
             <p className="text-sm text-muted-foreground mt-2">{description}</p>
           </header>
-          <form className="space-y-6" onSubmit={onSubmit}>
+          <form className="space-y-5" onSubmit={onSubmit}>
             {children}
             <Button
               type="submit"

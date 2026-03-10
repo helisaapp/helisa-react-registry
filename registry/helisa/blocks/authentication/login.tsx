@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { FormBase, FormInput } from "@/registry/helisa/ui/form-field";
+import { FormBase, FormInput } from "../../ui/form-field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleAlert, Eye, EyeOff, LockKeyhole, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -24,11 +24,9 @@ const formSchema = z.object({
       message: "El correo electrónico no puede exceder 100 caracteres.",
     })
     .toLowerCase(),
-  password: z
-    .string()
-    .min(1, {
-      message: "La contraseña es obligatoria.",
-    })
+  password: z.string().min(1, {
+    message: "La contraseña es obligatoria.",
+  }),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -84,7 +82,7 @@ const Login = ({
         setBackendError(result);
         form.reset({ email: "", password: "" });
       }
-    } catch (error) {
+    } catch {
       setBackendError("Ocurrió un error inesperado. Intente nuevamente.");
       form.reset({ email: "", password: "" });
     } finally {

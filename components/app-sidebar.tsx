@@ -136,9 +136,13 @@ const data = {
               url: "/docs/blocks/authentication/forgot-password",
             },
             {
+              title: "Recover Password",
+              url: "/docs/blocks/authentication/recover-password",
+            },
+            {
               title: "Profile",
               url: "/docs/blocks/authentication/profile",
-            }
+            },
           ],
         },
       ],

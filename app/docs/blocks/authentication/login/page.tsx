@@ -10,7 +10,10 @@ import CodeContainer from "@/components/code-container";
 const CodeExample = () => {
   const [backendError, setBackendError] = useState<string>();
 
-  const handleSubmitWithError = async (data: { email: string; password: string }) => {
+  const handleSubmitWithError = async (data: {
+    email: string;
+    password: string;
+  }) => {
     // Simulando validación del backend
     if (data.email === "test@example.com" && data.password === "Test123*") {
       setBackendError("Credenciales inválidas. Por favor, verifica tus datos");
@@ -27,7 +30,9 @@ const CodeExample = () => {
     <Login
       onSubmit={handleSubmitWithError}
       error={backendError}
-      onForgotPassword={() => alert("Redirigiendo a recuperación de contraseña")}
+      onForgotPassword={() =>
+        alert("Redirigiendo a recuperación de contraseña")
+      }
       termsUrl="/terms"
       policyUrl="/policy"
     />
@@ -73,8 +78,8 @@ const LoginPage = () => {
           <br />
           <br />
           Construido con React Hook Form y Zod para validación en tiempo real,
-          el componente mantiene las mejores prácticas de accesibilidad (WCAG)
-          y proporciona una experiencia de usuario fluida tanto en dispositivos
+          el componente mantiene las mejores prácticas de accesibilidad (WCAG) y
+          proporciona una experiencia de usuario fluida tanto en dispositivos
           móviles como en escritorio. Incluye estados de carga, limpieza
           automática de formularios ante errores, y enlaces opcionales a
           términos y políticas de privacidad.
@@ -182,8 +187,8 @@ const LoginPage = () => {
                   (data) =&gt; void | Promise&lt;void | string&gt;
                 </td>
                 <td className="px-4 py-3 text-sm">
-                  <strong>Requerido.</strong> Función callback que se ejecuta
-                  al enviar el formulario. Recibe un objeto con{" "}
+                  <strong>Requerido.</strong> Función callback que se ejecuta al
+                  enviar el formulario. Recibe un objeto con{" "}
                   <code className="text-xs bg-muted px-1 py-0.5 rounded">
                     email
                   </code>{" "}
@@ -206,14 +211,16 @@ const LoginPage = () => {
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-3 text-sm font-mono">onForgotPassword</td>
+                <td className="px-4 py-3 text-sm font-mono">
+                  onForgotPassword
+                </td>
                 <td className="px-4 py-3 text-xs font-mono text-muted-foreground">
                   () =&gt; void
                 </td>
                 <td className="px-4 py-3 text-sm">
                   Callback opcional para el enlace "¿Olvidó su contraseña?". Si
-                  no se proporciona, el enlace no se muestra. Típicamente se
-                  usa para redirigir a la página de recuperación.
+                  no se proporciona, el enlace no se muestra. Típicamente se usa
+                  para redirigir a la página de recuperación.
                 </td>
               </tr>
               <tr>

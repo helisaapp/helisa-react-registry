@@ -1,15 +1,12 @@
 "use client";
 
 import ForgotPassword from "@/components/helisa/blocks/authentication/forgot-password";
-import { useState } from "react";
 import { LayoutContainer } from "@/components/helisa/ui/layout-container";
 import { Typography } from "@/components/helisa/ui/typography";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CodeContainer from "@/components/code-container";
 
 const CodeExample = () => {
-  const [backendError, setBackendError] = useState<string>();
-
   const handleSubmit = async (data: { email: string }) => {
     // Simular error si el email no está registrado
     if (data.email === "notfound@example.com") {
@@ -57,15 +54,14 @@ const ForgotPasswordPage = () => {
         <Typography variant="lead">
           Componente de recuperación de contraseña diseñado para facilitar el
           proceso de restablecimiento de contraseñas en aplicaciones web. Este
-          bloque ofrece una interfaz simple y directa que permite a los
-          usuarios solicitar un enlace de recuperación mediante su correo
-          electrónico.
+          bloque ofrece una interfaz simple y directa que permite a los usuarios
+          solicitar un enlace de recuperación mediante su correo electrónico.
           <br />
           <br />
-          Incluye validación de email, manejo de errores del backend, estados
-          de carga y una experiencia de usuario optimizada tanto para móviles
-          como para escritorio. El componente mantiene la consistencia visual
-          con los demás bloques de autenticación (Login y Register).
+          Incluye validación de email, manejo de errores del backend, estados de
+          carga y una experiencia de usuario optimizada tanto para móviles como
+          para escritorio. El componente mantiene la consistencia visual con los
+          demás bloques de autenticación (Login y Register).
         </Typography>
       </div>
 
@@ -96,16 +92,16 @@ const ForgotPasswordPage = () => {
             automáticamente cuando ocurre un error.
           </li>
           <li>
-            <strong>Navegación Integrada:</strong> Botón opcional para volver
-            al login.
+            <strong>Navegación Integrada:</strong> Botón opcional para volver al
+            login.
           </li>
           <li>
             <strong>Totalmente Personalizable:</strong> Logo, título y
             descripción configurables mediante props.
           </li>
           <li>
-            <strong>Interfaz Minimalista:</strong> Diseño limpio centrado en
-            una sola acción para reducir fricción.
+            <strong>Interfaz Minimalista:</strong> Diseño limpio centrado en una
+            sola acción para reducir fricción.
           </li>
           <li>
             <strong>Responsivo:</strong> Se adapta perfectamente a cualquier
@@ -156,8 +152,8 @@ const ForgotPasswordPage = () => {
                   (data) =&gt; void | Promise&lt;void | string&gt;
                 </td>
                 <td className="px-4 py-3 text-sm">
-                  <strong>Requerido.</strong> Función callback que se ejecuta
-                  al enviar el formulario. Recibe el objeto con el email. Si
+                  <strong>Requerido.</strong> Función callback que se ejecuta al
+                  enviar el formulario. Recibe el objeto con el email. Si
                   retorna un string, se muestra como error del backend.
                 </td>
               </tr>
