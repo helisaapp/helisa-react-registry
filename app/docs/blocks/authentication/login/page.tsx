@@ -39,30 +39,35 @@ const CodeExample = () => {
   );
 };
 
-const codeString = `const [backendError, setBackendError] = useState<string>();
+const codeString = `  const [backendError, setBackendError] = useState<string>();
 
-const handleSubmitWithError = async (data: { email: string; password: string }) => {
-  // Simulando validación del backend
-  if (data.email === "test@example.com" && data.password === "Test123*") {
-    setBackendError("Credenciales inválidas. Por favor, verifica tus datos");
-    return;
-  }
+  const handleSubmitWithError = async (data: {
+    email: string;
+    password: string;
+  }) => {
+    // Simulando validación del backend
+    if (data.email === "test@example.com" && data.password === "Test123*") {
+      setBackendError("Credenciales inválidas. Por favor, verifica tus datos");
+      return;
+    }
 
-  // Simulando autenticación exitosa
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-  alert("¡Login exitoso!");
-  setBackendError(undefined);
-};
+    // Simulando autenticación exitosa con delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    alert("¡Login exitoso! Redirigiendo...");
+    setBackendError(undefined);
+  };
 
-return (
-  <Login
-    onSubmit={handleSubmitWithError}
-    error={backendError}
-    onForgotPassword={() => console.log("Forgot password clicked")}
-    termsUrl="/terms"
-    policyUrl="/policy"
-  />
-);`;
+  return (
+    <Login
+      onSubmit={handleSubmitWithError}
+      error={backendError}
+      onForgotPassword={() =>
+        alert("Redirigiendo a recuperación de contraseña")
+      }
+      termsUrl="/terms"
+      policyUrl="/policy"
+    />
+  );`;
 
 const LoginPage = () => {
   return (
