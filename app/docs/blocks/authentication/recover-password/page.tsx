@@ -62,7 +62,7 @@ const RecoverPasswordPage = () => {
       <div className="flex flex-col space-y-2 max-w-2xl my-5">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">
-          npx shadcn@latest add @helisa/recover-password
+          npx shadcn@latest add @helisa/authentication
         </Typography>
       </div>
 

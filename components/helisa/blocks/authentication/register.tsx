@@ -53,7 +53,7 @@ const Register = ({
             {onLoginClick && (
               <button
                 type="button"
-                className="text-sm font-semibold text-primary hover:underline flex items-center gap-1 mb-6 outline-none"
+                className="text-sm font-semibold text-primary hover:underline flex items-center gap-1 mb-6 "
                 onClick={onLoginClick}
               >
                 <ArrowLeft className="size-4" /> {loginLabel}

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormBase } from "../../ui/form-field";
+import { FormBase } from "../../../../components/helisa/ui/form-field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleAlert, Eye, EyeOff, LockKeyhole } from "lucide-react";
 import { useState } from "react";
@@ -18,7 +18,6 @@ interface RecoverPasswordProps {
 
 const passwordSchema = z
   .string()
-  .trim()
   .min(8, {
     message: "La contraseña debe tener al menos 8 caracteres.",
   })
@@ -42,7 +41,7 @@ const passwordSchema = z
 const formSchema = z
   .object({
     password: passwordSchema,
-    confirmPassword: z.string().trim().min(1, {
+    confirmPassword: z.string().min(1, {
       message: "La confirmación de contraseña es obligatoria.",
     }),
   })
@@ -95,7 +94,7 @@ const RecoverPassword = ({
 
   return (
     <main className="flex min-h-screen items-center justify-center p-4">
-      <section className="w-full max-w-sm min-w-sm space-y-6">
+      <section className="w-full max-w-sm min-w-[24rem] space-y-6">
         <article className="bg-card border rounded-2xl shadow-xl p-8">
           <header className="mb-6 text-center">
             {logoUrl ? (
@@ -106,7 +105,7 @@ const RecoverPassword = ({
                 className="mx-auto mb-4 h-16 w-auto object-contain select-none"
               />
             ) : (
-              <div className="mx-auto mb-4 h-8 w-30 rounded-lg flex items-center justify-center">
+              <div className="mx-auto mb-4 h-8 w-32 rounded-lg flex items-center justify-center">
                 <span className="text-primary text-4xl font-bold select-none">
                   HELISA
                 </span>
@@ -147,7 +146,12 @@ const RecoverPassword = ({
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none"
+                      title={
+                        showPassword
+                          ? "Ocultar contraseña"
+                          : "Mostrar contraseña"
+                      }
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
                     >
                       {showPassword ? (
                         <EyeOff className="size-4" />
@@ -184,7 +188,12 @@ const RecoverPassword = ({
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none"
+                      title={
+                        showPassword
+                          ? "Ocultar contraseña"
+                          : "Mostrar contraseña"
+                      }
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
                     >
                       {showConfirmPassword ? (
                         <EyeOff className="size-4" />

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormInput } from "../../ui/form-field";
+import { FormInput } from "../../../../components/helisa/ui/form-field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, CircleAlert, Mail } from "lucide-react";
 import { useState } from "react";
@@ -75,7 +75,7 @@ const ForgotPassword = ({
 
   return (
     <main className="flex min-h-screen items-center justify-center p-4">
-      <section className="w-full max-w-sm min-w-sm space-y-6">
+      <section className="w-full max-w-sm min-w-[24rem] space-y-6">
         <article className="bg-card border rounded-2xl shadow-xl p-8">
           <header className="mb-6 text-center">
             {logoUrl ? (
@@ -86,7 +86,7 @@ const ForgotPassword = ({
                 className="mx-auto mb-4 h-16 w-auto object-contain select-none"
               />
             ) : (
-              <div className="mx-auto mb-4 h-8 w-30 rounded-lg flex items-center justify-center">
+              <div className="mx-auto mb-4 h-8 w-32 rounded-lg flex items-center justify-center">
                 <span className="text-primary text-4xl font-bold select-none">
                   HELISA
                 </span>
@@ -128,10 +128,10 @@ const ForgotPassword = ({
           {onLoginClick && (
             <>
               <Separator className="my-6" />
-              <div className="align-center flex justify-center">
+              <div className="flex items-center justify-center">
                 <button
                   type="button"
-                  className="text-sm font-semibold text-primary hover:underline flex items-center gap-1 outline-none"
+                  className="text-sm font-semibold text-primary hover:underline flex items-center gap-1 outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   onClick={onLoginClick}
                 >
                   <ArrowLeft className="size-4" /> Volver al inicio de sesión

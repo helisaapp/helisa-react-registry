@@ -254,7 +254,7 @@ const ProfilePage = () => {
       <div className="flex flex-col space-y-2 max-w-2xl my-5">
         <Typography variant="large">Instalación</Typography>
         <Typography variant="code">
-          npx shadcn@latest add @helisa/profile
+          npx shadcn@latest add @helisa/authentication
         </Typography>
       </div>
 
@@ -433,16 +433,6 @@ const ProfilePage = () => {
                 <td className="px-4 py-3 text-sm">
                   Título del diálogo modal. Default: &quot;Perfil de
                   Usuario&quot;.
-                </td>
-              </tr>
-              <tr>
-                <td className="px-4 py-3 text-sm font-mono">description</td>
-                <td className="px-4 py-3 text-xs font-mono text-muted-foreground">
-                  string
-                </td>
-                <td className="px-4 py-3 text-sm">
-                  Subtítulo descriptivo del diálogo. Default: &quot;Actualiza tu
-                  información personal.&quot;.
                 </td>
               </tr>
               <tr>

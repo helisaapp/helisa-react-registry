@@ -3,7 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { FormBase, FormInput } from "../../ui/form-field";
+import {
+  FormBase,
+  FormInput,
+} from "../../../../components/helisa/ui/form-field";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CircleAlert, Eye, EyeOff, LockKeyhole, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -92,7 +95,7 @@ const Login = ({
 
   return (
     <main className="flex min-h-screen items-center justify-center p-4">
-      <section className="w-full max-w-sm min-w-sm space-y-6">
+      <section className="w-full max-w-sm min-w-[24rem] space-y-6">
         <article className="bg-card border rounded-2xl shadow-xl p-8">
           <header className="mb-6 text-center">
             {logoUrl ? (
@@ -103,7 +106,7 @@ const Login = ({
                 className="mx-auto mb-4 h-16 w-auto object-contain select-none"
               />
             ) : (
-              <div className="mx-auto mb-4 h-8 w-30 rounded-lg flex items-center justify-center">
+              <div className="mx-auto mb-4 h-8 w-32 rounded-lg flex items-center justify-center">
                 <span className="text-primary text-4xl font-bold select-none">
                   HELISA
                 </span>
@@ -157,7 +160,12 @@ const Login = ({
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                        title={
+                          showPassword
+                            ? "Ocultar contraseña"
+                            : "Mostrar contraseña"
+                        }
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
                       >
                         {showPassword ? (
                           <EyeOff className="size-4" />
@@ -182,11 +190,11 @@ const Login = ({
           {onForgotPassword && (
             <>
               <Separator className="my-6" />
-              <div className="text-center">
+              <div className="flex items-center justify-center">
                 <button
                   type="button"
                   onClick={onForgotPassword}
-                  className="text-sm font-semibold text-primary hover:underline outline-none rounded"
+                  className="text-sm font-semibold text-primary hover:underline outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background flex items-center gap-1"
                 >
                   ¿Olvidó su contraseña?
                 </button>

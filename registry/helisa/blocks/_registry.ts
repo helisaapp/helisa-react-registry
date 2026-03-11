@@ -7,6 +7,20 @@ export const blocks: Registry["items"] = [
     title: "Authentication",
     description:
       "Complete authentication block: login, register, forgot password, recover password and profile.",
+    dependencies: [
+      "zod",
+      "@hookform/resolvers",
+      "react-hook-form",
+      "lucide-react",
+    ],
+    registryDependencies: [
+      "button",
+      "input",
+      "separator",
+      "dialog",
+      "avatar",
+      "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/form-field.json",
+    ],
     files: [
       {
         path: "blocks/authentication/login.tsx",
