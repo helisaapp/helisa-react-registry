@@ -289,6 +289,53 @@
           "target": "components/helisa/components/data-table/data-table-column-header.tsx"
         }
       ]
+    },
+    {
+      "name": "authentication",
+      "type": "registry:block",
+      "title": "Authentication",
+      "description": "Complete authentication block: login, register, forgot password, recover password and profile.",
+      "dependencies": [
+        "zod",
+        "@hookform/resolvers",
+        "react-hook-form",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "separator",
+        "dialog",
+        "avatar",
+        "https://raw.githubusercontent.com/helisaapp/helisa-react-registry/refs/heads/main/public/r/form-field.json"
+      ],
+      "files": [
+        {
+          "path": "registry/helisa/blocks/authentication/login.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/blocks/authentication/login.tsx"
+        },
+        {
+          "path": "registry/helisa/blocks/authentication/register.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/blocks/authentication/register.tsx"
+        },
+        {
+          "path": "registry/helisa/blocks/authentication/forgot-password.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/blocks/authentication/forgot-password.tsx"
+        },
+        {
+          "path": "registry/helisa/blocks/authentication/recover-password.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/blocks/authentication/recover-password.tsx"
+        },
+        {
+          "path": "registry/helisa/blocks/authentication/profile.tsx",
+          "type": "registry:component",
+          "target": "components/helisa/blocks/authentication/profile.tsx"
+        }
+      ]
     }
   ],
   "name": "shadcn/ui"
